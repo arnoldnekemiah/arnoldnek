@@ -22,7 +22,7 @@ function Footer() {
             {' '}
             {year}
             {' '}
-            SB
+            Arnold Nekemiah
           </h3>
         </Col>
         <Col md="4" className="footer-body">

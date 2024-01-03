@@ -15,9 +15,9 @@ function AboutCard() {
             {' '}
             <span className="purple"> Kampala, Uganda.</span>
             <br />
-            &ldquo;I&apos; am Computer Engineer by profession&ldquo;
+            &ldquo;I am Computer Engineer by profession&ldquo;
             <br />
-            I have graduated with a Bachelor of Computer Engineering from Busitema University
+            I graduated with a Bachelor of Science in Computer Engineering from Busitema University
             <br />
             <br />
             Apart from coding, some other activities that I love to do!

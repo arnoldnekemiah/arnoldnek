@@ -13,7 +13,7 @@ import {
   AiOutlineUser,
 } from 'react-icons/ai';
 
-import portlogo from '../Assets/portlogo.png';
+import logos from '../Assets/logos.png';
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -38,7 +38,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img src={portlogo} className="img-fluid portlogo" alt="brand" />
+          <img src={logos} className="img-fluid logos" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -100,7 +100,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -112,7 +112,7 @@ function NavBar() {
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="#"
                 target="_blank"
                 className="fork-btn-inner"
               >
