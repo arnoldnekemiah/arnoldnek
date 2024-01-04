@@ -24,7 +24,11 @@ function Home2() {
             </h1>
             <p className="home-about-body">
               I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
+              something, I think… 🤷‍♂️ so
+              I&lsquo;m good at developing Mobile applications using Kotlin or Java,
+              Training and Making Machine Learning Models with the help of python tools.
+              I&lsquo;m also into Web Application development which is my area of specialization.
+
               <br />
               <br />
               I am fluent in classics like
