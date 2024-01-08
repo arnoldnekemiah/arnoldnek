@@ -39,7 +39,7 @@ function Projects() {
               imgPath={devSchool}
               isBlog={false}
               title="Developer School"
-              description="This is the first capstone project from microverse. this project is a website for web developement schools, were students can see the courses info programs offered . built using html/css and javascript"
+              description="This was the first capstone project from microverse.This project is a website for web developement schools, were students can see the courses info programs offered.Built using html/css and javascript"
               ghLink="https://github.com/arnoldnekemiah/Developer-school"
               demoLink="https://arnoldnekemiah.github.io/Developer-school/"
             />
