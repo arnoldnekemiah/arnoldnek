@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { CgGitFork } from 'react-icons/cg';
+import { MdContactMail } from 'react-icons/md';
 import {
   AiFillStar,
   AiOutlineHome,
@@ -82,6 +83,18 @@ function NavBar() {
                 />
                 {' '}
                 Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                onClick={() => updateExpanded(false)}
+              >
+                <MdContactMail style={{ marginBottom: '2px' }} />
+                {' '}
+                Contact
               </Nav.Link>
             </Nav.Item>
 
