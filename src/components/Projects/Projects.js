@@ -74,6 +74,7 @@ function Projects() {
               title="Doctors clinic project"
               description="Featuring two dedicated repositories for front-end and back-end, our user-friendly platform empowers users to navigate clinic pages, learn about doctors, and book appointments effortlessly.Behind the scenes, our robust back-end efficiently manages data operations, including GET, PUT, POST, and DESTROY, ensuring a smooth and secure user experience. Elevate healthcare management with our comprehensive solution.This is was made with [React + Rails]"
               ghLink="https://github.com/arnoldnekemiah/book-an-appointment-capstone"
+              demoLink="https://drive.google.com/file/d/1pTlifcIavgGnuqk3oPSvJ9684Us7RusF/view?usp=sharing"
             />
           </Col>
 
@@ -84,6 +85,7 @@ function Projects() {
               title="Music Player Mobile Application"
               description="This is a music player built purely with Kotlin, It loads music stored locally in the phone"
               ghLink="https://github.com/arnoldnekemiah/Music_App"
+              demoLink="https://drive.google.com/file/d/1N1fNvkzig8Tne7UUa2l1s02pgjWcXAmJ/view?usp=sharing"
             />
           </Col>
         </Row>
