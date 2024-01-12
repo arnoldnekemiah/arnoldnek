@@ -29,6 +29,7 @@ function Projects() {
               isBlog={false}
               title="Crypto Market"
               description="Crypto Market is an app that lets you keep track of the top 100 cryptocurrencies ranked by their market caps. You will also be able to see details about each token such as the price per unit in USD, the amount traded in the past 24 hours in USD, and the current supply of the token in circulation."
+              techStacks={['React', 'Redux', 'HTML', 'CSS']}
               ghLink="https://github.com/arnoldnekemiah/crypto-market"
               demoLink="https://crypto-market-phi-blush.vercel.app/"
             />
@@ -39,7 +40,8 @@ function Projects() {
               imgPath={devSchool}
               isBlog={false}
               title="Developer School"
-              description="This was the first capstone project from microverse. This project is a website for web development schools, where students can see the courses info programs offered. Built using HTML/CSS and JavaScript"
+              description="This was the first capstone project from microverse. This project is a website for web development schools, where students can see the courses info programs offered."
+              techStacks={['JavaScript', 'HTML', 'CSS']}
               ghLink="https://github.com/arnoldnekemiah/Developer-school"
               demoLink="https://arnoldnekemiah.github.io/Developer-school/"
             />
@@ -50,7 +52,8 @@ function Projects() {
               imgPath={metflixNew}
               isBlog={false}
               title="Metflix"
-              description="This is a single-page app that lists movies by categories. Users can like their favourite movies, open details about each movie and leave comments. Built with JavaScript."
+              description="This is a single-page app that lists movies by categories. Users can like their favourite movies, open details about each movie and leave comments."
+              techStacks={['React', 'Redux', 'RestAPI']}
               ghLink="https://github.com/arnoldnekemiah/Metflix"
               demoLink="https://arnoldnekemiah.github.io/Metflix/"
             />
@@ -62,6 +65,7 @@ function Projects() {
               isBlog={false}
               title="Space X travelers Hub"
               description="We worked with the live data from the SpaceX API. This web application for a company that provides commercial and scientific space travel services.The application allows users to book rockets and join selected space missions.Built with React"
+              techStacks={['React', 'Redux', 'RestAPI']}
               ghLink="https://github.com/arnoldnekemiah/space-travelers-hub"
               demoLink="https://space-x-travelers-hub.onrender.com/"
             />
@@ -73,6 +77,7 @@ function Projects() {
               isBlog={false}
               title="Doctors clinic project"
               description="This project features two dedicated repositories for front-end and back-end, our user-friendly platform empowers users to navigate clinic pages, learn about doctors, and book appointments effortlessly. Behind the scenes, our robust back-end efficiently manages data operations, including GET, PUT, POST, and DESTROY, ensuring a smooth and secure user experience. Elevate healthcare management with our comprehensive solution. This project was made with React for front-end and Ruby on Rails for Back-end"
+              techStacks={['React', 'Redux', 'Ruby on Rails', 'PostgreSql']}
               ghLink="https://github.com/arnoldnekemiah/book-an-appointment-capstone"
               demoLink="https://drive.google.com/file/d/1pTlifcIavgGnuqk3oPSvJ9684Us7RusF/view?usp=sharing"
             />
@@ -84,6 +89,7 @@ function Projects() {
               isBlog={false}
               title="Music Player Mobile Application"
               description="This is a music player built purely with Kotlin, It loads music stored locally in the phone"
+              techStacks={['Kotlin', 'UI', 'Ux']}
               ghLink="https://github.com/arnoldnekemiah/Music_App"
               demoLink="https://drive.google.com/file/d/1N1fNvkzig8Tne7UUa2l1s02pgjWcXAmJ/view?usp=sharing"
             />

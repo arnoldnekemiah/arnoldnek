@@ -12,6 +12,7 @@ function ProjectCards({
   ghLink,
   isBlog,
   demoLink,
+  techStacks,
 }) {
   return (
     <Card className="project-card-view">
@@ -21,6 +22,19 @@ function ProjectCards({
         <Card.Text style={{ textAlign: 'justify' }}>
           {description}
         </Card.Text>
+
+        {/* Tech Stacks */}
+        <div>
+          <ul style={{ listStyleType: 'none', padding: 0, marginBottom: '20px' }}>
+            {techStacks && techStacks.map((stack, index) => (
+              <li key={stack} style={{ display: 'inline', marginRight: '10px' }}>
+                {index > 0 && ' • '}
+                {stack}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <Button variant="primary" href={ghLink} target="_blank">
           <BsGithub />
           {' '}
@@ -56,6 +70,7 @@ ProjectCards.propTypes = {
   ghLink: PropTypes.string.isRequired,
   isBlog: PropTypes.bool.isRequired,
   demoLink: PropTypes.string.isRequired,
+  techStacks: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ProjectCards;
