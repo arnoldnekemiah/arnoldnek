@@ -28,7 +28,7 @@ function Projects() {
               imgPath={crypto}
               isBlog={false}
               title="Crypto Market"
-              description="Crypto Market is an app that lets you keep track of the top 100 cryptocurrencies ranked by their marketcaps. You will also be able to see details about each token such as the price per unit in USD, amount traded in the past 24h in USD, the current supply of the token in circulation."
+              description="Crypto Market is an app that lets you keep track of the top 100 cryptocurrencies ranked by their market caps. You will also be able to see details about each token such as the price per unit in USD, the amount traded in the past 24 hours in USD, and the current supply of the token in circulation."
               ghLink="https://github.com/arnoldnekemiah/crypto-market"
               demoLink="https://delicate-taiyaki-9884f9.netlify.app/"
             />
@@ -39,7 +39,7 @@ function Projects() {
               imgPath={devSchool}
               isBlog={false}
               title="Developer School"
-              description="This was the first capstone project from microverse.This project is a website for web developement schools, were students can see the courses info programs offered.Built using html/css and javascript"
+              description="This was the first capstone project from microverse. This project is a website for web development schools, where students can see the courses info programs offered. Built using HTML/CSS and JavaScript"
               ghLink="https://github.com/arnoldnekemiah/Developer-school"
               demoLink="https://arnoldnekemiah.github.io/Developer-school/"
             />
@@ -50,7 +50,7 @@ function Projects() {
               imgPath={metflixNew}
               isBlog={false}
               title="Metflix"
-              description="This is a single-page app that lists movies by categories. Users can like their favorite movies, open details about each movie and leave comments. Built with JavaScript."
+              description="This is a single-page app that lists movies by categories. Users can like their favourite movies, open details about each movie and leave comments. Built with JavaScript."
               ghLink="https://github.com/arnoldnekemiah/Metflix"
               demoLink="https://arnoldnekemiah.github.io/Metflix/"
             />
@@ -61,7 +61,7 @@ function Projects() {
               imgPath={space}
               isBlog={false}
               title="Space X travelers Hub"
-              description="We worked with the real live data from the SpaceX API. A web application for a company that provides commercial and scientific space travel services.The application allows users to book rockets and join selected space missions.Built with React"
+              description="We worked with the live data from the SpaceX API. This web application for a company that provides commercial and scientific space travel services.The application allows users to book rockets and join selected space missions.Built with React"
               ghLink="https://github.com/arnoldnekemiah/space-travelers-hub"
               demoLink="https://space-x-travelers-hub.onrender.com/"
             />
@@ -72,7 +72,7 @@ function Projects() {
               imgPath={doc}
               isBlog={false}
               title="Doctors clinic project"
-              description="Featuring two dedicated repositories for front-end and back-end, our user-friendly platform empowers users to navigate clinic pages, learn about doctors, and book appointments effortlessly.Behind the scenes, our robust back-end efficiently manages data operations, including GET, PUT, POST, and DESTROY, ensuring a smooth and secure user experience. Elevate healthcare management with our comprehensive solution.This is was made with [React + Rails]"
+              description="This project features two dedicated repositories for front-end and back-end, our user-friendly platform empowers users to navigate clinic pages, learn about doctors, and book appointments effortlessly. Behind the scenes, our robust back-end efficiently manages data operations, including GET, PUT, POST, and DESTROY, ensuring a smooth and secure user experience. Elevate healthcare management with our comprehensive solution. This project was made with React for front-end and Ruby on Rails for Back-end"
               ghLink="https://github.com/arnoldnekemiah/book-an-appointment-capstone"
               demoLink="https://drive.google.com/file/d/1pTlifcIavgGnuqk3oPSvJ9684Us7RusF/view?usp=sharing"
             />
