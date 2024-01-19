@@ -13,8 +13,6 @@ import {
   AiOutlineUser,
 } from 'react-icons/ai';
 
-import logos from '../Assets/logos.png';
-
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
@@ -38,7 +36,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img src={logos} className="img-fluid logos" alt="brand" />
+          <h1>i-nad</h1>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
