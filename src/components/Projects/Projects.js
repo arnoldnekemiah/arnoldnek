@@ -27,11 +27,11 @@ function Projects() {
             <ProjectCard
               imgPath={crypto}
               isBlog={false}
-              title="Crypto Market"
-              description="Crypto Market is an app that lets you keep track of the top 100 cryptocurrencies ranked by their market caps. You will also be able to see details about each token such as the price per unit in USD, the amount traded in the past 24 hours in USD, and the current supply of the token in circulation."
+              title="Sample Portfolio"
+              description="This is also my portfolio in which I showcase my skills. Please Check it out."
               techStacks={['React', 'Redux', 'HTML', 'CSS']}
-              ghLink="https://github.com/arnoldnekemiah/crypto-market"
-              demoLink="https://crypto-market-blond.vercel.app/"
+              ghLink="https://github.com/arnoldnekemiah/portfolio-final"
+              demoLink="https://arnoldnekemiah.github.io/portfolio-final/"
             />
           </Col>
 
