@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCards';
 import Particle from '../Particle';
-import crypto from '../../Assets/Projects/crypto.png';
+import locator from '../../Assets/Projects/locator.jpg';
 import devSchool from '../../Assets/Projects/devSchool.png';
 import metflixNew from '../../Assets/Projects/metflixNew.png';
 import space from '../../Assets/Projects/space.png';
@@ -25,13 +25,13 @@ function Projects() {
         <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={crypto}
+              imgPath={space}
               isBlog={false}
-              title="Crypto Market"
-              description="Crypto Market is an app that lets you keep track of the top 100 cryptocurrencies ranked by their marketcaps. You will also be able to see details about each token such as the price per unit in USD, amount traded in the past 24h in USD, the current supply of the token in circulation."
-              techStacks={['React', 'Redux', 'HTML', 'CSS']}
-              ghLink="https://github.com/arnoldnekemiah/crypto-market"
-              demoLink="https://crypto-market-blond.vercel.app/"
+              title="Space X travelers Hub"
+              description="We worked with the live data from the SpaceX API. This web application for a company that provides commercial and scientific space travel services.The application allows users to book rockets and join selected space missions.Built with React"
+              techStacks={['React', 'Redux', 'RestAPI']}
+              ghLink="https://github.com/arnoldnekemiah/space-travelers-hub"
+              demoLink="https://space-x-travelers-hub.onrender.com/"
             />
           </Col>
 
@@ -61,13 +61,13 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={space}
+              imgPath={locator}
               isBlog={false}
-              title="Space X travelers Hub"
-              description="We worked with the live data from the SpaceX API. This web application for a company that provides commercial and scientific space travel services.The application allows users to book rockets and join selected space missions.Built with React"
-              techStacks={['React', 'Redux', 'RestAPI']}
-              ghLink="https://github.com/arnoldnekemiah/space-travelers-hub"
-              demoLink="https://space-x-travelers-hub.onrender.com/"
+              title="Locator App"
+              description="This is an app that shows your current location on the map. It also has Authentication with firebase"
+              techStacks={['Flutter']}
+              ghLink="https://github.com/arnoldnekemiah/locator_app"
+              demoLink="#"
             />
           </Col>
 
