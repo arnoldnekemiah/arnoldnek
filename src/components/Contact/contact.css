@@ -1,154 +1,122 @@
-:root {
-  --bg-color: #0c0c0c;
-  --primary-color: #0d0d0d;
-  --secondary-color: #fff;
-  --text-color: #fff;
-  --text-color-2: #fff;
-  --overlay-color: rgb(12 12 12 / 63%);
-}
-
-[data-theme="light"] {
-  --bg-color: #fff;
-  --primary-color: #fff;
-  --secondary-color: #000;
-  --text-color: #000;
-  --text-color-2: #000;
-  --overlay-color: rgb(255 255 255 / 70%);
-}
-
-/* html,
-body {
-    margin: 0;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: visible;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Raleway', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-top: 60px;
-    border-left: 10px solid var(--primary-color);
-    border-right: 10px solid var(--primary-color);
-} */
-
-ul {
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Marcellus, sans-serif;
-}
+/* Removed local :root and [data-theme="light"] variables */
+/* Removed commented out html, body styles */
+/* Removed generic ul, h1-h6, p, code, .ovhidden, .text_2, .color_pr */
+/* Removed .cursor__dot and .loading-bar styles, assuming global or not critical */
 
 a,
 a:hover {
-  color: var(--text-color);
+  color: var(--primary-color); /* Using global primary color for links */
 }
 
-p {
-  word-break: break-word;
-  hyphens: auto;
+.color_sec { /* Used for "Get in touch" heading */
+  color: var(--primary-color); /* Changed to primary for better visibility in light theme */
 }
 
-.ovhidden {
-  overflow: hidden;
-}
-
-.text_2,
-.text_2:hover {
-  color: var(--text-color-2);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-.cursor__dot div {
-  z-index: 999999 !important;
-}
-
-.cursor__dot div:last-child {
-  filter: invert(1);
-  background-color: var(--primary-color) !important;
-}
-
-.cursor__dot div:first-child {
-  filter: invert(1);
-  background-color: var(--overlay-color) !important;
-}
-
-.color_pr {
-  color: var(--primary-color) !important;
-}
-
-.color_sec {
-  color: var(--secondary-color);
-}
-
-.contact__form .form-control {
-  padding: 1.375rem 0.75rem;
+.contact__form .form-control,
+.contact__form input.form-control,
+.contact__form textarea.form-control {
+  padding: 0.75rem 1rem; /* Adjusted padding */
   line-height: 1.5;
   color: var(--text-color);
-  background-color: var(--bg-color);
-  border-radius: 0 !important;
-  border: 1px solid var(--secondary-color);
+  background-color: var(--bg-color); /* Could be --card-bg-color if distinct bg is needed */
+  border-radius: 0.25rem !important; /* Standardized border-radius */
+  border: 1px solid var(--border-color);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .contact__form input.form-control {
-  margin-bottom: 2em;
-  height: calc(2.5em + 0.75rem + 2px);
+  margin-bottom: 1.5em; /* Adjusted margin */
+  /* height: calc(2.5em + 0.75rem + 2px); */ /* Let padding and line-height determine height */
+}
+.contact__form textarea.form-control {
+  margin-bottom: 1em; /* Added margin for textarea */
 }
 
-.loading-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  z-index: 999999999;
-  background: var(--text-color);
-  transform: translateX(100%);
-  animation: shift-rightwards 1s ease-in-out infinite;
-  animation-delay: 0.3s;
+.contact__form .form-control:focus {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25); /* Needs --primary-color-rgb or use a solid shadow */
 }
 
-@keyframes shift-rightwards {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  40% {
-    transform: translateX(0%);
-  }
-
-  60% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
+/* Assuming --primary-color: #007bff; then rgba is (0, 123, 255, 0.25) */
+/* For simplicity, if --primary-color-rgb is not available, use a simpler shadow or just border color change */
+/* Let's use a simpler focus for now if --primary-color-rgb is not defined globally */
+/* Re-evaluating focus style: use a simpler box-shadow with --shadow-color or just rely on border-color */
+.contact__form .form-control:focus {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 5px var(--shadow-color); /* Using theme shadow color for focus */
 }
 
-.btn {
-  color: #fff;
-}
 
 .container-contact {
-  height: 43rem;
-  margin: 0;
+  /* height: 43rem; */ /* Removing fixed height for responsiveness */
+  max-width: 960px; /* Adding a max-width for better layout on large screens */
+  margin: 0 auto; /* Centering the container */
   color: var(--text-color);
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 60px;
+  padding-top: 2rem; /* Adjusted padding */
+  padding-bottom: 2rem; /* Added padding at the bottom */
 }
 
-.ac_btn {
+.container-contact .display-4 { /* Targeting h1 */
+    color: var(--text-color);
+}
+
+.container-contact .t_border { /* Styling for hr */
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem; /* Adjusted margin */
+    margin-bottom: 2rem; /* Adjusted margin */
+}
+
+.container-contact address p strong,
+.container-contact address a {
+    color: var(--text-color); /* Ensure address text is readable */
+}
+.container-contact address a:hover {
+    color: var(--primary-color);
+}
+.container-contact p { /* Paragraphs within contact sections */
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+
+.ac_btn { /* Submit button */
   width: fit-content;
+  background-color: var(--button-primary-bg-color);
+  color: var(--button-primary-text-color);
+  border: 1px solid transparent; /* Or var(--button-primary-bg-color) */
+  padding: 0.5rem 1rem; /* Adjusted padding */
+  border-radius: 0.25rem; /* Standard border-radius */
+  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ac_btn:hover {
+  background-color: var(--button-primary-hover-bg-color);
+  color: var(--button-primary-text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.ac_btn:focus {
+  background-color: var(--button-primary-hover-bg-color);
+  color: var(--button-primary-text-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb),0.5); /* Requires --primary-color-rgb */
+  /* Fallback focus if --primary-color-rgb is not available */
+  /* box-shadow: 0 0 5px var(--shadow-color); */
+}
+/* Simpler focus for ac_btn for now */
+.ac_btn:focus {
+  background-color: var(--button-primary-hover-bg-color);
+  color: var(--button-primary-text-color);
+  outline: 0;
+  box-shadow: 0 0 8px var(--primary-color);
 }
