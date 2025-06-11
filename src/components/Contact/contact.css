@@ -74,15 +74,14 @@ a:hover {
 
 
 .container-contact {
-  /* height: 43rem; */ /* Removing fixed height for responsiveness */
-  max-width: 960px; /* Adding a max-width for better layout on large screens */
-  margin: 0 auto; /* Centering the container */
+  max-width: 960px;
+  margin: 0 auto;
   color: var(--text-color);
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 2rem; /* Adjusted padding */
-  padding-bottom: 2rem; /* Added padding at the bottom */
+  padding-top: 150px; /* Increased padding to push content down */
+  padding-bottom: 2rem;
 }
 
 .container-contact .display-4 { /* Targeting h1 */

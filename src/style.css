@@ -478,21 +478,21 @@ h1 {
 
 /* --------- */
 .footer {
-  /* background-color var(--footer-bg-color-dark) removed. Light theme version will be default. */
-  bottom: 0 !important;
-  padding-top: 10px !important;
-  padding-bottom: 8px !important;
-  background-color: var(--footer-bg-color); /* Light theme default */
+  background-color: var(--footer-bg-color);
+  padding: 20px 0;
+  text-align: center;
+  color: var(--text-color);
 }
-/* Removed :root[data-theme="light"] .footer */
 
-.footer-copywright {
-  text-align: center !important;
+.footer-copywright p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .footer-body {
-  z-index: 1;
-  text-align: center !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 767px) {
@@ -507,17 +507,27 @@ h1 {
 
 .footer h3 {
   font-size: 1em;
-  /* color var(--footer-text-color-dark) removed. Light theme version will be default. */
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
   color: var(--text-color) !important; /* Light theme default */
 }
-/* Removed :root[data-theme="light"] .footer h3 */
 
 .footer-icons {
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
-  padding: 0 !important;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons .social-icons a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.footer-icons .social-icons a:hover {
+  color: var(--primary-color);
 }
 
 .blockquote-footer {
