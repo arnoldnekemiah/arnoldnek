@@ -33,8 +33,8 @@ function NavBar() {
   // However, this might be better handled once globally, e.g. in index.js or App.js
   // For now, I'll ensure data-theme="light" is set.
   // A better approach would be to set this in a higher-order component or index.js
-  // For this step, we are just removing dark theme logic. The next step will make light theme default.
-  // So, I won't add attribute setting here, assuming it will be handled in the CSS cleanup.
+  // Removing dark theme logic. The next step will make light theme default.
+  // I'll assume attribute setting is handled in the CSS cleanup.
 
   return (
     <Navbar

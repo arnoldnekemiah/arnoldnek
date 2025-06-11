@@ -32,6 +32,10 @@ button:focus {
   box-shadow: none !important;
 }
 
+h1 {
+  letter-spacing: normal !important;
+}
+
 /* --------- */
 
 /*  Preloader */
@@ -164,7 +168,6 @@ button:focus {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
     /* background-color from var(--navbar-mobile-bg-color-dark) removed. Light theme version will be default. */
-  }
     background-color: var(--navbar-bg-color) !important; /* Mobile navbar background */
   }
 
@@ -225,7 +228,7 @@ button:focus {
   display: block;
   height: 5px;
   width: 0;
-  border-radius: 16px;
+  letter-spacing: normal;
   /* background var(--nav-link-hover-after-bg-dark) removed. Light theme version will be default. */
   bottom: 1px;
   left: 0;

@@ -99,6 +99,13 @@ a:hover {
 .container-contact address a {
     color: var(--text-color); /* Ensure address text is readable */
 }
+
+.contact-details-with-icons p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
 .container-contact address a:hover {
     color: var(--primary-color);
 }
