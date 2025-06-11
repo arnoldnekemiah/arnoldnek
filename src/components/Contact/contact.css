@@ -1,6 +1,9 @@
 /* Removed local :root and [data-theme="light"] variables */
+
 /* Removed commented out html, body styles */
+
 /* Removed generic ul, h1-h6, p, code, .ovhidden, .text_2, .color_pr */
+
 /* Removed .cursor__dot and .loading-bar styles, assuming global or not critical */
 
 a,
@@ -26,8 +29,12 @@ a:hover {
 
 .contact__form input.form-control {
   margin-bottom: 1.5em; /* Adjusted margin */
-  /* height: calc(2.5em + 0.75rem + 2px); */ /* Let padding and line-height determine height */
+
+  /* height: calc(2.5em + 0.75rem + 2px); */
+
+  /* Let padding and line-height determine height */
 }
+
 .contact__form textarea.form-control {
   margin-bottom: 1em; /* Added margin for textarea */
 }
@@ -41,8 +48,11 @@ a:hover {
 }
 
 /* Assuming --primary-color: #007bff; then rgba is (0, 123, 255, 0.25) */
+
 /* For simplicity, if --primary-color-rgb is not available, use a simpler shadow or just border color change */
+
 /* Let's use a simpler focus for now if --primary-color-rgb is not defined globally */
+
 /* Re-evaluating focus style: use a simpler box-shadow with --shadow-color or just rely on border-color */
 .contact__form .form-control:focus {
   color: var(--text-color);
@@ -52,9 +62,10 @@ a:hover {
   box-shadow: 0 0 5px var(--shadow-color); /* Using theme shadow color for focus */
 }
 
-
 .container-contact {
-  /* height: 43rem; */ /* Removing fixed height for responsiveness */
+  /* height: 43rem; */
+
+  /* Removing fixed height for responsiveness */
   max-width: 960px; /* Adding a max-width for better layout on large screens */
   margin: 0 auto; /* Centering the container */
   color: var(--text-color);
@@ -66,27 +77,28 @@ a:hover {
 }
 
 .container-contact .display-4 { /* Targeting h1 */
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .container-contact .t_border { /* Styling for hr */
-    border-top: 1px solid var(--border-color);
-    margin-top: 1rem; /* Adjusted margin */
-    margin-bottom: 2rem; /* Adjusted margin */
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem; /* Adjusted margin */
+  margin-bottom: 2rem; /* Adjusted margin */
 }
 
 .container-contact address p strong,
 .container-contact address a {
-    color: var(--text-color); /* Ensure address text is readable */
-}
-.container-contact address a:hover {
-    color: var(--primary-color);
-}
-.container-contact p { /* Paragraphs within contact sections */
-    color: var(--text-color);
-    margin-bottom: 1rem;
+  color: var(--text-color); /* Ensure address text is readable */
 }
 
+.container-contact address a:hover {
+  color: var(--primary-color);
+}
+
+.container-contact p { /* Paragraphs within contact sections */
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
 
 .ac_btn { /* Submit button */
   width: fit-content;
@@ -109,10 +121,13 @@ a:hover {
   background-color: var(--button-primary-hover-bg-color);
   color: var(--button-primary-text-color);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb),0.5); /* Requires --primary-color-rgb */
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.5); /* Requires --primary-color-rgb */
+
   /* Fallback focus if --primary-color-rgb is not available */
+
   /* box-shadow: 0 0 5px var(--shadow-color); */
 }
+
 /* Simpler focus for ac_btn for now */
 .ac_btn:focus {
   background-color: var(--button-primary-hover-bg-color);

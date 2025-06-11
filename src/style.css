@@ -1,10 +1,10 @@
 :root[data-theme="light"] {
-  --bg-color: #FFFFFF;
-  --text-color: #333333;
+  --bg-color: #fff;
+  --text-color: #333;
   --primary-color: #007bff; /* Muted Blue */
   --secondary-color: #6c757d; /* Muted Gray */
   --section-background-color: #f8f9fa; /* Slightly off-white */
-  --card-bg-color: #FFFFFF;
+  --card-bg-color: #fff;
   --border-color: #dee2e6;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --imp-text-color: #0056b3; /* Darker blue for emphasis in light theme */
@@ -14,7 +14,7 @@
   --scrollbar-thumb-color: #c0c0c0;
   --scrollbar-thumb-hover-color: #a0a0a0;
   --button-primary-bg-color: #007bff;
-  --button-primary-text-color: #FFFFFF;
+  --button-primary-text-color: #fff;
   --button-primary-hover-bg-color: #0056b3;
 }
 
@@ -97,12 +97,12 @@ html {
   --fork-btn-hover-border-color-dark: #a24dd386;
 }
 
-:root[data-theme="light"] .purple {
-  color: var(--primary-color) !important;
-}
-
 html:not([data-theme="light"]) .purple {
   color: var(--imp-text-color) !important;
+}
+
+:root[data-theme="light"] .purple {
+  color: var(--primary-color) !important;
 }
 
 button:focus {
@@ -204,7 +204,6 @@ button:focus {
   background-color: var(--navbar-bg-color) !important;
 }
 
-
 .navbar-toggler {
   position: relative !important;
   background-color: transparent !important;
@@ -262,6 +261,7 @@ button:focus {
     font-size: 1.4rem !important;
     background-color: var(--navbar-mobile-bg-color-dark) !important; /* dark theme */
   }
+
   :root[data-theme="light"] .navbar {
     background-color: var(--navbar-bg-color) !important; /* light theme */
   }
@@ -424,16 +424,17 @@ button:focus {
   color: var(--text-color); /* light theme */
 }
 
-
 .heading {
   font-size: 2.4em !important;
   padding-left: 50px !important;
+
   /* color will be inherited from .home-content or overridden by specific classes */
 }
 
 .heading-name {
   font-size: 2.5em !important;
   padding-left: 45px !important;
+
   /* color will be inherited from .home-content or overridden by specific classes */
 }
 
@@ -509,6 +510,7 @@ button:focus {
   padding-top: 50px;
   font-size: 1.2em !important;
   text-align: left;
+
   /* Text color will be inherited from .home-about-description */
 }
 
@@ -566,24 +568,19 @@ button:focus {
 }
 
 .home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px var(--home-social-icon-hover-box-shadow-dark); /* dark theme */
-}
-
-:root[data-theme="light"] .home-social-icons:hover::before {
-  box-shadow: 0 0 15px var(--primary-color); /* light theme */
+  transform: scale(1);
 }
 
 .home-social-icons:hover {
-  color: var(--home-social-icon-hover-color-dark); /* dark theme */
+  color: var(--home-social-icon-hover-color-dark) !important; /* dark theme */
   box-shadow: 0 0 5px var(--home-social-icon-hover-box-shadow-dark); /* dark theme */
   text-shadow: 0 0 2px var(--home-social-icon-hover-text-shadow-dark); /* dark theme */
 }
 
 :root[data-theme="light"] .home-social-icons:hover {
-  color: var(--primary-color); /* light theme */
-  box-shadow: 0 0 5px var(--primary-color); /* light theme */
-  text-shadow: 0 0 2px var(--primary-color); /* light theme */
+  color: var(--primary-color) !important; /* light theme */
+  box-shadow: 0 0 5px var(--primary-color) !important; /* light theme */
+  text-shadow: 0 0 2px var(--primary-color) !important; /* light theme */
 }
 
 .social-icons {
@@ -728,6 +725,7 @@ button:focus {
 :root[data-theme="light"] .btn-primary {
   background-color: var(--button-primary-bg-color) !important; /* light theme */
   border-color: var(--button-primary-bg-color) !important; /* light theme */
+  color: var(--button-primary-text-color) !important; /* light theme */
 }
 
 .btn-primary:hover {
@@ -946,6 +944,9 @@ button:focus {
   left: -9px;
   top: 0;
   background: var(--resume-item-before-bg-color-dark); /* dark theme */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transform: scale(0.9);
+  z-index: -1;
   border: 2px solid var(--resume-item-before-border-color-dark); /* dark theme */
 }
 
@@ -971,8 +972,8 @@ button:focus {
 }
 
 :root[data-theme="light"] .like-btn {
-  background-color: var(--button-primary-bg-color) !important; /* light theme */
-  border-color: var(--button-primary-bg-color) !important; /* light theme */
+  background-color: var(--like-btn-bg-color-light) !important; /* light theme */
+  border-color: var(--like-btn-border-color-light) !important; /* light theme */
   color: var(--button-primary-text-color) !important; /* light theme text */
 }
 
@@ -983,24 +984,8 @@ button:focus {
 }
 
 :root[data-theme="light"] .like-btn:hover {
-  background-color: var(--button-primary-hover-bg-color) !important; /* light theme */
-  border-color: var(--button-primary-hover-bg-color) !important; /* light theme */
-}
-
-.animate-like {
-  animation-name: likeAnimation;
-  animation-fill-mode: forwards;
-  animation-duration: 0.85s;
-}
-
-@keyframes likeAnimation {
-  0% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  background-color: var(--like-btn-hover-bg-color-light) !important; /* light theme */
+  border-color: var(--like-btn-hover-border-color-light) !important; /* light theme */
 }
 
 .fork-btn {
@@ -1019,8 +1004,8 @@ button:focus {
 }
 
 :root[data-theme="light"] .fork-btn-inner {
-  background-color: var(--secondary-color) !important; /* light theme */
-  border-color: var(--secondary-color) !important; /* light theme */
+  background-color: var(--fork-btn-bg-color-light) !important; /* light theme */
+  border-color: var(--fork-btn-border-color-light) !important; /* light theme */
   color: var(--button-primary-text-color) !important; /* light theme text, assuming it's white/contrasting */
 }
 
@@ -1031,10 +1016,9 @@ button:focus {
 }
 
 :root[data-theme="light"] .fork-btn-inner:hover {
-  background-color: var(--primary-color) !important; /* light theme */
-  border-color: var(--primary-color) !important; /* light theme */
+  background-color: var(--fork-btn-hover-bg-color-light) !important; /* light theme */
+  border-color: var(--fork-btn-hover-border-color-light) !important; /* light theme */
 }
-
 
 .fork-btn-inner::after {
   display: none !important;

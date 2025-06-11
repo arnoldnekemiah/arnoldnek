@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -16,7 +16,7 @@ import {
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("dark"); // Default to dark
+  const [currentTheme, setCurrentTheme] = useState('dark'); // Default to dark
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -27,27 +27,27 @@ function NavBar() {
   }
 
   const toggleTheme = () => {
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setCurrentTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme); // Save preference
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); // Save preference
     // Ensure body also gets the attribute if index.css relies on it for body background
-    document.body.setAttribute("data-theme", newTheme);
+    document.body.setAttribute('data-theme', newTheme);
   };
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    let initialTheme = "light"; // Default to light
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let initialTheme = 'light'; // Default to light
 
     if (savedTheme) {
       initialTheme = savedTheme;
     } else if (prefersDark) {
-      initialTheme = "dark";
+      initialTheme = 'dark';
     }
 
-    document.documentElement.setAttribute("data-theme", initialTheme);
-    document.body.setAttribute("data-theme", initialTheme); // Also apply to body
+    document.documentElement.setAttribute('data-theme', initialTheme);
+    document.body.setAttribute('data-theme', initialTheme); // Also apply to body
     setCurrentTheme(initialTheme);
   }, []);
 
@@ -137,8 +137,8 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <button onClick={toggleTheme} className="theme-toggle-btn">
-                {currentTheme === "dark" ? "Light Mode" : "Dark Mode"}
+              <button type="button" onClick={toggleTheme} className="theme-toggle-btn">
+                {currentTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
               </button>
             </Nav.Item>
           </Nav>
