@@ -1,9 +1,6 @@
 /* Removed local :root and [data-theme="light"] variables */
-
 /* Removed commented out html, body styles */
-
 /* Removed generic ul, h1-h6, p, code, .ovhidden, .text_2, .color_pr */
-
 /* Removed .cursor__dot and .loading-bar styles, assuming global or not critical */
 
 a,
@@ -12,8 +9,28 @@ a:hover {
 }
 
 .color_sec { /* Used for "Get in touch" heading */
-  color: var(--primary-color); /* Changed to primary for better visibility in light theme */
+  color: var(--primary-color);
+  font-size: 1.75rem; /* Slightly larger */
+  font-weight: 600; /* Ensure it's bold */
+  margin-bottom: 1.5rem; /* Add space below */
 }
+
+/* Styling for the columns for better separation and spacing */
+.contact-info-col, .contact-form-col {
+  padding: 20px;
+}
+
+/* Optional: add a subtle border to the form column on larger screens */
+@media (min-width: 992px) { /* lg breakpoint */
+  .contact-form-col {
+    border-left: 1px solid var(--border-color);
+    padding-left: 30px; /* More padding if border is added */
+  }
+  .contact-info-col {
+    padding-right: 30px;
+  }
+}
+
 
 .contact__form .form-control,
 .contact__form input.form-control,
@@ -29,12 +46,8 @@ a:hover {
 
 .contact__form input.form-control {
   margin-bottom: 1.5em; /* Adjusted margin */
-
-  /* height: calc(2.5em + 0.75rem + 2px); */
-
-  /* Let padding and line-height determine height */
+  /* height: calc(2.5em + 0.75rem + 2px); */ /* Let padding and line-height determine height */
 }
-
 .contact__form textarea.form-control {
   margin-bottom: 1em; /* Added margin for textarea */
 }
@@ -48,11 +61,8 @@ a:hover {
 }
 
 /* Assuming --primary-color: #007bff; then rgba is (0, 123, 255, 0.25) */
-
 /* For simplicity, if --primary-color-rgb is not available, use a simpler shadow or just border color change */
-
 /* Let's use a simpler focus for now if --primary-color-rgb is not defined globally */
-
 /* Re-evaluating focus style: use a simpler box-shadow with --shadow-color or just rely on border-color */
 .contact__form .form-control:focus {
   color: var(--text-color);
@@ -62,10 +72,9 @@ a:hover {
   box-shadow: 0 0 5px var(--shadow-color); /* Using theme shadow color for focus */
 }
 
-.container-contact {
-  /* height: 43rem; */
 
-  /* Removing fixed height for responsiveness */
+.container-contact {
+  /* height: 43rem; */ /* Removing fixed height for responsiveness */
   max-width: 960px; /* Adding a max-width for better layout on large screens */
   margin: 0 auto; /* Centering the container */
   color: var(--text-color);
@@ -77,37 +86,45 @@ a:hover {
 }
 
 .container-contact .display-4 { /* Targeting h1 */
-  color: var(--text-color);
+    color: var(--text-color);
 }
 
 .container-contact .t_border { /* Styling for hr */
-  border-top: 1px solid var(--border-color);
-  margin-top: 1rem; /* Adjusted margin */
-  margin-bottom: 2rem; /* Adjusted margin */
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem; /* Adjusted margin */
+    margin-bottom: 2rem; /* Adjusted margin */
 }
 
 .container-contact address p strong,
 .container-contact address a {
-  color: var(--text-color); /* Ensure address text is readable */
+    color: var(--text-color); /* Ensure address text is readable */
 }
-
 .container-contact address a:hover {
-  color: var(--primary-color);
+    color: var(--primary-color);
+}
+.container-contact p { /* Paragraphs within contact sections */
+    color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
-.container-contact p { /* Paragraphs within contact sections */
-  color: var(--text-color);
-  margin-bottom: 1rem;
-}
 
 .ac_btn { /* Submit button */
   width: fit-content;
   background-color: var(--button-primary-bg-color);
   color: var(--button-primary-text-color);
-  border: 1px solid transparent; /* Or var(--button-primary-bg-color) */
-  padding: 0.5rem 1rem; /* Adjusted padding */
-  border-radius: 0.25rem; /* Standard border-radius */
-  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid var(--button-primary-bg-color); /* Ensure border matches bg */
+  padding: 0.65rem 1.2rem; /* Slightly more padding */
+  border-radius: 0.3rem; /* Slightly more rounded */
+  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  font-weight: 500;
+  display: inline-flex; /* For icon alignment */
+  align-items: center; /* For icon alignment */
+  justify-content: center; /* For icon alignment */
+}
+
+.ac_btn .btn-icon {
+  margin-left: 8px; /* Space between text and icon */
+  font-size: 1.1em; /* Adjust icon size if needed */
 }
 
 .ac_btn:hover {
@@ -121,17 +138,32 @@ a:hover {
   background-color: var(--button-primary-hover-bg-color);
   color: var(--button-primary-text-color);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.5); /* Requires --primary-color-rgb */
-
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb),0.5); /* Requires --primary-color-rgb */
   /* Fallback focus if --primary-color-rgb is not available */
-
   /* box-shadow: 0 0 5px var(--shadow-color); */
 }
-
 /* Simpler focus for ac_btn for now */
 .ac_btn:focus {
   background-color: var(--button-primary-hover-bg-color);
+  border-color: var(--button-primary-hover-bg-color);
   color: var(--button-primary-text-color);
   outline: 0;
   box-shadow: 0 0 8px var(--primary-color);
+}
+
+/* Styles for contact details if icons were added (using a wrapper class) */
+.contact-details p {
+  margin-bottom: 0.75rem; /* Consistent spacing */
+  display: flex;
+  align-items: center;
+}
+
+.contact-details svg { /* If react-icons were used */
+  margin-right: 12px;
+  color: var(--primary-color);
+  font-size: 1.2em; /* Make icons a bit larger */
+}
+
+.contact-details strong {
+  margin-right: 5px;
 }

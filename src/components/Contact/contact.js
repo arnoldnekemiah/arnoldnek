@@ -22,28 +22,30 @@ export default function ContactUs() {
         </Col>
       </Row>
       <Row className="sec_sp">
-        <Col lg="12" className="d-flex">
-          <Col lg="5" className="mb-5">
+        <Col lg="12" className="d-flex flex-wrap"> {/* Added flex-wrap for responsiveness */}
+          <Col lg="5" className="mb-5 contact-info-col">
             <h3 className="color_sec py-4">Get in touch</h3>
-            <address>
-              <strong>Email:</strong>
-              {' '}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>{contactConfig.YOUR_EMAIL}</a>
-              <br />
-              <br />
-              {contactConfig.YOUR_FONE ? (
-                <p>
-                  <strong>Phone:</strong>
+            <div className="contact-details">
+              <address>
+                <p> {/* Wrapped email in p for consistent styling with phone */}
+                  <strong>Email:</strong>
                   {' '}
-                  {contactConfig.YOUR_FONE}
+                  <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>{contactConfig.YOUR_EMAIL}</a>
                 </p>
-              ) : (
-                ''
-              )}
-            </address>
+                {contactConfig.YOUR_FONE ? (
+                  <p>
+                    <strong>Phone:</strong>
+                    {' '}
+                    {contactConfig.YOUR_FONE}
+                  </p>
+                ) : (
+                  ''
+                )}
+              </address>
+            </div>
             <p>{contactConfig.description}</p>
           </Col>
-          <Col lg="7" className="d-flex align-items-center">
+          <Col lg="7" className="d-flex align-items-center contact-form-col">
             <form className="contact__form w-100" action="https://formspree.io/f/xgebykvy" method="post">
               <Row>
                 <Col lg="6" className="form-group">
@@ -79,7 +81,7 @@ export default function ContactUs() {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn btn-primary ac_btn" type="submit">
-                    Send Message
+                    Send Message <span className="btn-icon">✉</span>
                   </button>
                 </Col>
               </Row>

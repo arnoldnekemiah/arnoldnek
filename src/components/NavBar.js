@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react'; // Removed useEffect
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -16,7 +16,8 @@ import {
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState('dark'); // Default to dark
+  // Removed currentTheme state and toggleTheme function
+  // Removed useEffect for theme initialization
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -26,34 +27,14 @@ function NavBar() {
     }
   }
 
-  const toggleTheme = () => {
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setCurrentTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme); // Save preference
-    // Ensure body also gets the attribute if index.css relies on it for body background
-    document.body.setAttribute('data-theme', newTheme);
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let initialTheme = 'light'; // Default to light
-
-    if (savedTheme) {
-      initialTheme = savedTheme;
-    } else if (prefersDark) {
-      initialTheme = 'dark';
-    }
-
-    document.documentElement.setAttribute('data-theme', initialTheme);
-    document.body.setAttribute('data-theme', initialTheme); // Also apply to body
-    setCurrentTheme(initialTheme);
-  }, []);
-
-  // Removed second useEffect that was redundant, combined into the first one.
-
   window.addEventListener('scroll', scrollHandler);
+
+  // Set default theme to light directly on load, if this component is responsible.
+  // However, this might be better handled once globally, e.g. in index.js or App.js
+  // For now, I'll ensure data-theme="light" is set.
+  // A better approach would be to set this in a higher-order component or index.js
+  // For this step, we are just removing dark theme logic. The next step will make light theme default.
+  // So, I won't add attribute setting here, assuming it will be handled in the CSS cleanup.
 
   return (
     <Navbar
@@ -135,12 +116,7 @@ function NavBar() {
                 <AiFillStar style={{ fontSize: '1.1em' }} />
               </Button>
             </Nav.Item>
-
-            <Nav.Item>
-              <button type="button" onClick={toggleTheme} className="theme-toggle-btn">
-                {currentTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-              </button>
-            </Nav.Item>
+            {/* Removed Theme Toggle Button */}
           </Nav>
         </Navbar.Collapse>
       </Container>

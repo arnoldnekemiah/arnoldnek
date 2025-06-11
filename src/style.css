@@ -1,10 +1,10 @@
-:root[data-theme="light"] {
-  --bg-color: #fff;
-  --text-color: #333;
+:root {
+  --bg-color: #FFFFFF;
+  --text-color: #333333;
   --primary-color: #007bff; /* Muted Blue */
   --secondary-color: #6c757d; /* Muted Gray */
   --section-background-color: #f8f9fa; /* Slightly off-white */
-  --card-bg-color: #fff;
+  --card-bg-color: #FFFFFF;
   --border-color: #dee2e6;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --imp-text-color: #0056b3; /* Darker blue for emphasis in light theme */
@@ -14,94 +14,17 @@
   --scrollbar-thumb-color: #c0c0c0;
   --scrollbar-thumb-hover-color: #a0a0a0;
   --button-primary-bg-color: #007bff;
-  --button-primary-text-color: #fff;
+  --button-primary-text-color: #FFFFFF;
   --button-primary-hover-bg-color: #0056b3;
+  /* The following variables are now explicitly set for the light theme as default */
+  /* These were effectively the light theme values already, but now they are the ONLY values. */
+  --image-gradient: none; /* Or a light-themed gradient if desired */
+  /* --imp-text-color is already #0056b3 from above, which is good for light theme */
 }
 
-html {
-  --section-background-color:
-    linear-gradient(
-      to bottom left,
-      rgba(17, 16, 16, 0.582),
-      rgba(12, 8, 24, 0.904)
-    );
-  --image-gradient:
-    linear-gradient(
-      to bottom left,
-      rgba(17, 16, 16, 0.678),
-      rgba(12, 10, 22, 0.863)
-    );
-  --imp-text-color: #c770f0;
+/* The html {} block containing dark theme variables has been removed. */
 
-  /* Dark theme specific scrollbar */
-  --scrollbar-track-color-dark: #2d1950;
-  --scrollbar-thumb-color-dark: rgba(178, 121, 216, 0.959);
-  --scrollbar-thumb-hover-color-dark: rgba(222, 130, 235, 0.911);
-
-  /* Dark theme specific navbar */
-  --navbar-bg-color-dark: #1b1a2ea9;
-  --navbar-mobile-bg-color-dark: #181a27;
-  --navbar-toggler-icon-color-dark: #be50f4;
-  --nav-link-color-dark: white;
-  --nav-link-hover-after-bg-dark: #c95bf5;
-
-
-  /* Dark theme specific home section */
-  --home-content-text-color-dark: whitesmoke;
-  --main-name-color-dark: #cd5ff8;
-  --typewriter-text-color-dark: #be6adf;
-  --typewriter-cursor-color-dark: #b562d6;
-  --home-about-description-color-dark: white;
-  --home-about-social-color-dark: white;
-  --home-social-icon-bg-dark: rgba(255, 255, 255, 0.972);
-  --home-social-icon-before-bg-dark: #68187a;
-  --home-social-icon-hover-color-dark: #87209e;
-  --home-social-icon-hover-box-shadow-dark: #87209e;
-  --home-social-icon-hover-text-shadow-dark: #87209e;
-  --icon-colour-dark: #700c86;
-
-  /* Dark theme specific footer */
-  --footer-bg-color-dark: rgb(10, 4, 22);
-  --footer-text-color-dark: white;
-  --blockquote-footer-color-dark: #a588c0;
-
-  /* Dark theme specific project section */
-  --project-card-shadow-dark: rgba(119, 53, 136, 0.459);
-  --project-card-text-color-dark: white;
-  --project-card-hover-shadow-dark: rgba(129, 72, 144, 0.561);
-  --btn-primary-bg-color-dark: #623686;
-  --btn-primary-border-color-dark: #623686;
-  --btn-primary-hover-bg-color-dark: #6d20c5d7;
-  --btn-primary-hover-border-color-dark: #6d20c5d7;
-  --project-heading-color-dark: white;
-
-  /* Dark theme specific about section */
-  --about-section-text-color-dark: white;
-  --tech-icon-border-color-dark: rgba(200, 137, 230, 0.637);
-  --tech-icon-shadow-dark: rgba(89, 4, 168, 0.137);
-  --tech-icon-hover-border-color-dark: rgba(197, 115, 230, 0.883);
-  --quote-card-text-color-dark: white;
-
-  /* Dark theme specific resume section */
-  --resume-section-text-color-dark: white;
-  --resume-item-border-color-dark: #8a49a8;
-  --resume-item-title-bg-color-dark: #5234795d;
-  --resume-item-before-bg-color-dark: #fff;
-  --resume-item-before-border-color-dark: #8a49a8;
-  --like-btn-bg-color-dark: #934cce5e;
-  --like-btn-border-color-dark: #934cce5e;
-  --like-btn-hover-bg-color-dark: #a24dd386;
-  --like-btn-hover-border-color-dark: #a24dd386;
-  --fork-btn-bg-color-dark: #934cce5e;
-  --fork-btn-hover-bg-color-dark: #a24dd386;
-  --fork-btn-hover-border-color-dark: #a24dd386;
-}
-
-html:not([data-theme="light"]) .purple {
-  color: var(--imp-text-color) !important;
-}
-
-:root[data-theme="light"] .purple {
+.purple { /* Removed :root[data-theme="light"] */
   color: var(--primary-color) !important;
 }
 
@@ -146,32 +69,16 @@ button:focus {
   width: 7px;
 }
 
-/* Track */
+/* Scrollbar styles now default to light theme */
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-track-color-dark);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-color-dark);
-  border-radius: 12px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover-color-dark);
-  border-radius: 12px;
-}
-
-:root[data-theme="light"] ::-webkit-scrollbar-track {
   background: var(--scrollbar-track-color);
 }
 
-:root[data-theme="light"] ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb-color);
 }
 
-:root[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover-color);
 }
 
@@ -180,29 +87,26 @@ button:focus {
 /* Navbar Section  */
 
 /* --------- */
+/* Dark theme .sticky styles (using specific -dark variables) removed. */
 .sticky {
-  background-color: var(--navbar-bg-color-dark) !important; /* dark theme */
   transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out !important;
-  box-shadow: 0 10px 10px 0 var(--shadow-color) !important; /* needs to be generic or themed */
+  background-color: var(--navbar-bg-color) !important;
+  box-shadow: 0 10px 10px 0 var(--shadow-color) !important;
   backdrop-filter: blur(15px) !important;
 }
 
-:root[data-theme="light"] .sticky {
-  background-color: var(--navbar-bg-color) !important; /* light theme */
-  box-shadow: 0 10px 10px 0 var(--shadow-color) !important;
-}
+/* Removed :root[data-theme="light"] .sticky */
 
 .navbar {
   position: fixed !important;
   transition: background-color 0.3s ease-out !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
+  background-color: var(--navbar-bg-color) !important; /* Default for non-sticky */
 }
 
-/* Default (dark) navbar background will be set in media query if not sticky */
-:root[data-theme="light"] .navbar:not(.sticky) {
-  background-color: var(--navbar-bg-color) !important;
-}
+/* Removed :root[data-theme="light"] .navbar:not(.sticky) */
+
 
 .navbar-toggler {
   position: relative !important;
@@ -212,8 +116,8 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: var(--navbar-toggler-icon-color-dark) !important; /* dark theme */
-  transition: background-color 0.35s ease-in-out; /* Added for theme change */
+  /* background-color from var(--navbar-toggler-icon-color-dark) removed. Light theme version will be default. */
+  transition: background-color 0.35s ease-in-out;
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -256,14 +160,12 @@ button:focus {
 }
 
 @media (max-width: 767px) {
-  .navbar {
+  .navbar { /* Mobile styles */
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: var(--navbar-mobile-bg-color-dark) !important; /* dark theme */
+    /* background-color from var(--navbar-mobile-bg-color-dark) removed. Light theme version will be default. */
   }
-
-  :root[data-theme="light"] .navbar {
-    background-color: var(--navbar-bg-color) !important; /* light theme */
+    background-color: var(--navbar-bg-color) !important; /* Mobile navbar background */
   }
 
   .navbar-nav .nav-item a::after {
@@ -272,12 +174,9 @@ button:focus {
 }
 
 .navbar-brand {
-  color: var(--nav-link-color-dark) !important; /* dark theme */
+  color: var(--text-color) !important;
 }
-
-:root[data-theme="light"] .navbar-brand {
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .navbar-brand */
 
 .logo {
   height: 1.4em !important;
@@ -289,18 +188,18 @@ button:focus {
 }
 
 .navbar-nav .nav-link {
-  color: var(--nav-link-color-dark) !important; /* dark theme */
+  /* color var(--nav-link-color-dark) removed. Light theme version will be default. */
   padding-right: 1rem !important;
   padding-left: 1rem !important;
+  color: var(--text-color) !important;
 }
+/* Removed :root[data-theme="light"] .navbar-nav .nav-link */
 
-:root[data-theme="light"] .navbar-nav .nav-link {
-  color: var(--text-color) !important; /* light theme */
+.navbar-toggler span {
+  /* background-color from var(--navbar-toggler-icon-color-dark) removed. */
+  background-color: var(--primary-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .navbar-toggler span {
-  background-color: var(--primary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .navbar-toggler span */
 
 @media (max-width: 767px) {
   .nav-link {
@@ -327,20 +226,19 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: var(--nav-link-hover-after-bg-dark); /* dark theme */
+  /* background var(--nav-link-hover-after-bg-dark) removed. Light theme version will be default. */
   bottom: 1px;
   left: 0;
   z-index: -1;
   transition: width 0.3s ease-out, background-color 0.3s ease-out;
+  background: var(--primary-color); /* Default after style */
 }
 
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
 }
 
-:root[data-theme="light"] .navbar-nav .nav-item a::after {
-  background: var(--primary-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .navbar-nav .nav-item a::after */
 
 /* --------- */
 
@@ -402,68 +300,58 @@ button:focus {
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg); /* dark theme */
+  /* background-image var(--image-gradient) removed. Light theme version will be default. */
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
+  background-image: none; /* Was var(--image-gradient) for dark, now none for light */
+  background-color: var(--bg-color); /* Light theme default */
 }
 
-:root[data-theme="light"] .home-section {
-  background-image: none; /* Override dark theme gradient */
-  background-color: var(--bg-color);
-}
+/* Removed :root[data-theme="light"] .home-section */
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: var(--home-content-text-color-dark); /* dark theme */
+  /* color var(--home-content-text-color-dark) removed. Light theme version will be default. */
   text-align: left;
+  color: var(--text-color); /* Light theme default */
 }
 
-:root[data-theme="light"] .home-content {
-  color: var(--text-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .home-content */
+
 
 .heading {
   font-size: 2.4em !important;
   padding-left: 50px !important;
-
   /* color will be inherited from .home-content or overridden by specific classes */
 }
 
 .heading-name {
   font-size: 2.5em !important;
   padding-left: 45px !important;
-
   /* color will be inherited from .home-content or overridden by specific classes */
 }
 
 .main-name {
-  color: var(--main-name-color-dark); /* dark theme */
+  color: var(--primary-color); /* Light theme default */
 }
-
-:root[data-theme="light"] .main-name {
-  color: var(--primary-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .main-name */
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: var(--typewriter-text-color-dark) !important; /* dark theme */
+  /* color var(--typewriter-text-color-dark) removed. Light theme version will be default. */
   font-weight: 600 !important;
+  color: var(--primary-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .Typewriter__wrapper {
-  color: var(--primary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .Typewriter__wrapper */
 
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: var(--typewriter-cursor-color-dark) !important; /* dark theme */
+  /* color var(--typewriter-cursor-color-dark) removed. Light theme version will be default. */
+  color: var(--primary-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .Typewriter__cursor {
-  color: var(--primary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .Typewriter__cursor */
 
 @media (max-width: 767px) {
   .Typewriter__wrapper {
@@ -496,33 +384,27 @@ button:focus {
 }
 
 .home-about-description {
-  color: var(--home-about-description-color-dark) !important; /* dark theme */
+  /* color var(--home-about-description-color-dark) removed. Light theme version will be default. */
   padding-top: 100px !important;
   padding-bottom: 20px !important;
   text-align: center;
+  color: var(--text-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .home-about-description {
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .home-about-description */
 
 .home-about-body {
   padding-top: 50px;
   font-size: 1.2em !important;
   text-align: left;
-
   /* Text color will be inherited from .home-about-description */
 }
 
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
-  color: var(--home-about-social-color-dark) !important; /* dark theme */
+  color: var(--text-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .home-about-social {
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .home-about-social */
 
 .home-about-social-links {
   justify-content: center !important;
@@ -540,14 +422,12 @@ button:focus {
   text-align: center !important;
   font-size: 1.2em !important;
   line-height: 2em !important;
-  background: var(--home-social-icon-bg-dark) !important; /* dark theme */
+  /* background var(--home-social-icon-bg-dark) removed. Light theme version will be default. */
   border-radius: 50% !important;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease !important;
+  background: var(--secondary-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .home-social-icons {
-  background: var(--secondary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .home-social-icons */
 
 .home-social-icons::before {
   content: "";
@@ -557,31 +437,26 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: var(--home-social-icon-before-bg-dark); /* dark theme */
+  /* background var(--home-social-icon-before-bg-dark) removed. Light theme version will be default. */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   transform: scale(0.9);
   z-index: -1;
+  background: var(--primary-color); /* Light theme default */
 }
-
-:root[data-theme="light"] .home-social-icons::before {
-  background: var(--primary-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .home-social-icons::before */
 
 .home-social-icons:hover::before {
-  transform: scale(1);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--primary-color); /* Light theme default */
 }
+/* Removed :root[data-theme="light"] .home-social-icons:hover::before */
 
 .home-social-icons:hover {
-  color: var(--home-social-icon-hover-color-dark) !important; /* dark theme */
-  box-shadow: 0 0 5px var(--home-social-icon-hover-box-shadow-dark); /* dark theme */
-  text-shadow: 0 0 2px var(--home-social-icon-hover-text-shadow-dark); /* dark theme */
+  color: var(--primary-color); /* Light theme default */
+  box-shadow: 0 0 5px var(--primary-color);
+  text-shadow: 0 0 2px var(--primary-color);
 }
-
-:root[data-theme="light"] .home-social-icons:hover {
-  color: var(--primary-color) !important; /* light theme */
-  box-shadow: 0 0 5px var(--primary-color) !important; /* light theme */
-  text-shadow: 0 0 2px var(--primary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .home-social-icons:hover */
 
 .social-icons {
   display: inline-block !important;
@@ -590,12 +465,9 @@ button:focus {
 }
 
 .icon-colour {
-  color: var(--icon-colour-dark) !important; /* dark theme */
+  color: var(--primary-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .icon-colour {
-  color: var(--primary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .icon-colour */
 
 /* --------- */
 
@@ -603,15 +475,13 @@ button:focus {
 
 /* --------- */
 .footer {
-  background-color: var(--footer-bg-color-dark); /* dark theme */
+  /* background-color var(--footer-bg-color-dark) removed. Light theme version will be default. */
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
+  background-color: var(--footer-bg-color); /* Light theme default */
 }
-
-:root[data-theme="light"] .footer {
-  background-color: var(--footer-bg-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .footer */
 
 .footer-copywright {
   text-align: center !important;
@@ -634,14 +504,12 @@ button:focus {
 
 .footer h3 {
   font-size: 1em;
-  color: var(--footer-text-color-dark) !important; /* dark theme */
+  /* color var(--footer-text-color-dark) removed. Light theme version will be default. */
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
+  color: var(--text-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .footer h3 {
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .footer h3 */
 
 .footer-icons {
   margin-top: 0.5em !important;
@@ -650,12 +518,9 @@ button:focus {
 }
 
 .blockquote-footer {
-  color: var(--blockquote-footer-color-dark) !important; /* dark theme */
+  color: var(--secondary-color) !important; /* Light theme default */
 }
-
-:root[data-theme="light"] .blockquote-footer {
-  color: var(--secondary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .blockquote-footer */
 
 
 /* --------- */
@@ -667,13 +532,10 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important; /* Uses html var, overridden by light theme */
+  background-image: none; /* Defaulting to light theme behavior */
+  background-color: var(--section-background-color);
 }
-
-:root[data-theme="light"] .project-section {
-  background-image: none;
-  background-color: var(--section-background-color); /* Uses light theme var */
-}
+/* Removed :root[data-theme="light"] .project-section */
 
 .project-card {
   padding-top: 50px !important;
@@ -686,28 +548,24 @@ button:focus {
 .project-card-view {
   box-shadow: 0 4px 5px 3px var(--project-card-shadow-dark) !important; /* dark theme */
   color: var(--project-card-text-color-dark) !important; /* dark theme */
-  background-color: var(--card-bg-color) !important; /* transparent for dark, white for light */
+  /* box-shadow, color from dark theme removed. Light theme versions will be default. */
+  /* background-color: var(--card-bg-color) is already light theme oriented */
   opacity: 0.9 !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
   height: 100% !important;
-  border: 1px solid transparent; /* for light theme */
+  border: 1px solid var(--border-color); /* Default light theme */
+  box-shadow: 0 4px 5px 3px var(--shadow-color) !important; /* Default light theme */
+  color: var(--text-color) !important; /* Default light theme */
+  background-color: var(--card-bg-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .project-card-view {
-  box-shadow: 0 4px 5px 3px var(--shadow-color) !important; /* light theme */
-  color: var(--text-color) !important; /* light theme */
-  border: 1px solid var(--border-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .project-card-view */
 
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px var(--project-card-hover-shadow-dark) !important; /* dark theme */
+  box-shadow: 0 6px 8px 5px var(--shadow-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .project-card-view:hover {
-  box-shadow: 0 6px 8px 5px var(--shadow-color) !important; /* light theme, slightly more pronounced shadow */
-}
+/* Removed :root[data-theme="light"] .project-card-view:hover */
 
 .card-img-top {
   padding: 20px !important;
@@ -716,28 +574,20 @@ button:focus {
 }
 
 .btn-primary {
-  color: var(--button-primary-text-color) !important; /* Should be white for both */
-  background-color: var(--btn-primary-bg-color-dark) !important; /* dark theme */
-  border-color: var(--btn-primary-border-color-dark) !important; /* dark theme */
+  color: var(--button-primary-text-color) !important;
+  /* background-color, border-color from dark theme removed. Light theme versions will be default. */
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  background-color: var(--button-primary-bg-color) !important; /* Default light theme */
+  border-color: var(--button-primary-bg-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .btn-primary {
-  background-color: var(--button-primary-bg-color) !important; /* light theme */
-  border-color: var(--button-primary-bg-color) !important; /* light theme */
-  color: var(--button-primary-text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .btn-primary */
 
 .btn-primary:hover {
   color: var(--button-primary-text-color) !important;
-  background-color: var(--btn-primary-hover-bg-color-dark) !important; /* dark theme */
-  border-color: var(--btn-primary-hover-border-color-dark) !important; /* dark theme */
+  background-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
+  border-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .btn-primary:hover {
-  background-color: var(--button-primary-hover-bg-color) !important; /* light theme */
-  border-color: var(--button-primary-hover-bg-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .btn-primary:hover */
 
 .btn:focus {
   outline: none !important;
@@ -745,15 +595,13 @@ button:focus {
 }
 
 .project-heading {
-  color: var(--project-heading-color-dark) !important; /* dark theme */
+  /* color var(--project-heading-color-dark) removed. Light theme version will be default. */
   font-size: 2.3em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
+  color: var(--text-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .project-heading {
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .project-heading */
 
 
 /* --------- */
@@ -766,37 +614,30 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important; /* Uses html var, overridden by light theme */
-  color: var(--about-section-text-color-dark) !important; /* dark theme */
+  /* background-image, color from dark theme removed. Light theme versions will be default. */
+  background-image: none; /* Default light theme */
+  background-color: var(--section-background-color); /* Default light theme */
+  color: var(--text-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .about-section {
-  background-image: none;
-  background-color: var(--section-background-color); /* Uses light theme var */
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .about-section */
 
 .tech-icons {
   font-size: 4.5em !important;
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
-  border: 1.7px solid var(--tech-icon-border-color-dark) !important; /* dark theme */
+  /* border, box-shadow from dark theme removed. Light theme versions will be default. */
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
   display: table !important;
-  box-shadow: 4px 5px 4px 3px var(--tech-icon-shadow-dark) !important; /* dark theme */
   overflow: hidden !important;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-  color: var(--text-color); /* Default icon color, can be overridden if icons are images */
+  color: var(--text-color) !important; /* Default light theme */
+  border: 1.7px solid var(--border-color) !important; /* Default light theme */
+  box-shadow: 4px 5px 4px 3px var(--shadow-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .tech-icons {
-  border: 1.7px solid var(--border-color) !important; /* light theme */
-  box-shadow: 4px 5px 4px 3px var(--shadow-color) !important; /* light theme */
-  color: var(--text-color) !important; /* Ensure icon color for light theme */
-}
+/* Removed :root[data-theme="light"] .tech-icons */
 
 @media (max-width: 767px) {
   .tech-icons {
@@ -807,12 +648,9 @@ button:focus {
 .tech-icons:hover {
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid var(--tech-icon-hover-border-color-dark) !important; /* dark theme */
+  border: 2.2px solid var(--primary-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .tech-icons:hover {
-  border: 2.2px solid var(--primary-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .tech-icons:hover */
 
 .tech-icon-images {
   padding: 20px !important;
@@ -821,13 +659,11 @@ button:focus {
 
 .quote-card-view {
   border: none !important;
-  color: var(--quote-card-text-color-dark) !important; /* dark theme */
+  /* color var(--quote-card-text-color-dark) removed. Light theme version will be default. */
   background-color: transparent !important;
+  color: var(--text-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .quote-card-view {
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .quote-card-view */
 
 .about-activity {
   list-style: none !important;
@@ -851,15 +687,12 @@ button:focus {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important; /* Uses html var, overridden by light theme */
-  color: var(--resume-section-text-color-dark) !important; /* dark theme */
+  /* background-image, color from dark theme removed. Light theme versions will be default. */
+  background-image: none; /* Default light theme */
+  background-color: var(--section-background-color); /* Default light theme */
+  color: var(--text-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .resume-section {
-  background-image: none;
-  background-color: var(--section-background-color); /* Uses light theme var */
-  color: var(--text-color) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .resume-section */
 
 .resume {
   padding-top: 50px;
@@ -897,29 +730,24 @@ button:focus {
 .resume .resume-item {
   padding: 0 0 10px 25px;
   margin-top: -2px;
-  border-left: 2px solid var(--resume-item-border-color-dark); /* dark theme */
+  /* border-left var(--resume-item-border-color-dark) removed. Light theme version will be default. */
   position: relative;
+  border-left: 2px solid var(--primary-color); /* Default light theme */
 }
-
-:root[data-theme="light"] .resume .resume-item {
-  border-left: 2px solid var(--primary-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .resume .resume-item */
 
 .resume .resume-item .resume-title {
   line-height: 18px;
   font-size: 0.9em;
-  background: var(--resume-item-title-bg-color-dark); /* dark theme */
+  /* background, color from dark theme removed. Light theme versions will be default. */
   padding: 8px 15px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--resume-section-text-color-dark); /* Ensure text color for dark theme */
+  background: var(--secondary-color); /* Default light theme */
+  color: var(--text-color); /* Default light theme */
 }
-
-:root[data-theme="light"] .resume .resume-item .resume-title {
-  background: var(--secondary-color); /* light theme */
-  color: var(--text-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .resume .resume-item .resume-title */
 
 .resume .resume-item ul {
   padding-left: 20px;
@@ -943,17 +771,10 @@ button:focus {
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: var(--resume-item-before-bg-color-dark); /* dark theme */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  transform: scale(0.9);
-  z-index: -1;
-  border: 2px solid var(--resume-item-before-border-color-dark); /* dark theme */
+  background: var(--bg-color); /* Default light theme */
+  border: 2px solid var(--primary-color); /* Default light theme */
 }
-
-:root[data-theme="light"] .resume .resume-item::before {
-  background: var(--bg-color); /* light theme */
-  border: 2px solid var(--primary-color); /* light theme */
-}
+/* Removed :root[data-theme="light"] .resume .resume-item::before */
 
 .like-item {
   padding-top: 10px !important;
@@ -962,30 +783,38 @@ button:focus {
 }
 
 .like-btn {
-  background-color: var(--like-btn-bg-color-dark) !important; /* dark theme */
-  border-color: var(--like-btn-border-color-dark) !important; /* dark theme */
+  /* background-color, border-color, color from dark theme removed. Light theme versions will be default. */
   padding: 0.25rem 0.98rem !important;
   border-radius: 5px !important;
   line-height: 1.4 !important;
   transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease !important;
-  color: var(--resume-section-text-color-dark); /* dark theme text */
+  background-color: var(--button-primary-bg-color) !important; /* Default light theme */
+  border-color: var(--button-primary-bg-color) !important; /* Default light theme */
+  color: var(--button-primary-text-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .like-btn {
-  background-color: var(--like-btn-bg-color-light) !important; /* light theme */
-  border-color: var(--like-btn-border-color-light) !important; /* light theme */
-  color: var(--button-primary-text-color) !important; /* light theme text */
-}
+/* Removed :root[data-theme="light"] .like-btn */
 
 .like-btn:hover {
   transform: translateY(-2px) !important;
-  background-color: var(--like-btn-hover-bg-color-dark) !important; /* dark theme */
-  border-color: var(--like-btn-hover-border-color-dark) !important; /* dark theme */
+  background-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
+  border-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
+}
+/* Removed :root[data-theme="light"] .like-btn:hover */
+
+.animate-like {
+  animation-name: likeAnimation;
+  animation-fill-mode: forwards;
+  animation-duration: 0.85s;
 }
 
-:root[data-theme="light"] .like-btn:hover {
-  background-color: var(--like-btn-hover-bg-color-light) !important; /* light theme */
-  border-color: var(--like-btn-hover-border-color-light) !important; /* light theme */
+@keyframes likeAnimation {
+  0% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .fork-btn {
@@ -995,65 +824,26 @@ button:focus {
 
 .fork-btn-inner {
   line-height: 1.4em !important;
-  background-color: var(--fork-btn-bg-color-dark) !important; /* dark theme */
+  /* background-color, color from dark theme removed. Light theme versions will be default. */
   padding: 0.25rem 1.1rem !important;
   vertical-align: middle !important;
   text-align: center !important;
-  color: var(--resume-section-text-color-dark); /* dark theme text */
   transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  background-color: var(--secondary-color) !important; /* Default light theme */
+  border-color: var(--secondary-color) !important; /* Default light theme */
+  color: var(--button-primary-text-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .fork-btn-inner {
-  background-color: var(--fork-btn-bg-color-light) !important; /* light theme */
-  border-color: var(--fork-btn-border-color-light) !important; /* light theme */
-  color: var(--button-primary-text-color) !important; /* light theme text, assuming it's white/contrasting */
-}
+/* Removed :root[data-theme="light"] .fork-btn-inner */
 
 .fork-btn-inner:hover {
   transform: translateY(-2px) !important;
-  background-color: var(--fork-btn-hover-bg-color-dark) !important; /* dark theme */
-  border-color: var(--fork-btn-hover-border-color-dark) !important; /* dark theme */
+  background-color: var(--primary-color) !important; /* Default light theme */
+  border-color: var(--primary-color) !important; /* Default light theme */
 }
-
-:root[data-theme="light"] .fork-btn-inner:hover {
-  background-color: var(--fork-btn-hover-bg-color-light) !important; /* light theme */
-  border-color: var(--fork-btn-hover-border-color-light) !important; /* light theme */
-}
+/* Removed :root[data-theme="light"] .fork-btn-inner:hover and merged its styles */
 
 .fork-btn-inner::after {
   display: none !important;
 }
 
-/* Theme Toggle Button */
-.theme-toggle-btn {
-  background-color: var(--navbar-bg-color); /* Use navbar bg color */
-  color: var(--text-color); /* Use text color */
-  border: 1px solid var(--border-color);
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  font-size: 0.9rem; /* Adjust as needed */
-  margin-left: 15px; /* Adjust as needed */
-  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-}
-
-.theme-toggle-btn:hover {
-  opacity: 0.8;
-}
-
-/* Light theme specific styles for the button if needed */
-:root[data-theme="light"] .theme-toggle-btn {
-  background-color: var(--navbar-bg-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-}
-
-
-/* Adjust position if needed for mobile */
-@media (max-width: 767px) {
-  .theme-toggle-btn {
-    margin-left: 0;
-    margin-top: 10px; /* Example spacing for mobile */
-    width: 100%; /* Make it full width in collapsed menu */
-  }
-}
+/* Removed Theme Toggle Button CSS */
