@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
+import { motion } from 'framer-motion';
 import Button from 'react-bootstrap/Button';
 import { CgWebsite } from 'react-icons/cg';
 import { BsGithub } from 'react-icons/bs';
@@ -14,51 +15,64 @@ function ProjectCards({
   demoLink,
   techStacks,
 }) {
+  const cardVariants = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+    hover: {
+      scale: 1.03,
+      boxShadow: "0px 0px 20px var(--neon-green)", /* Enhanced shadow on hover */
+      y: -5,
+    }
+  };
+
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={imgPath} alt="card-img" />
+    <motion.div
+      className="project-card-view glassmorphic" // Added glassmorphic
+      variants={cardVariants}
+      initial="initial"
+      animate="animate"
+      whileHover="hover"
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+    >
+      <Card.Img variant="top" src={imgPath} alt="card-img" className="card-img-top" />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text style={{ textAlign: 'justify' }}>
+        <Card.Title style={{color: "var(--neon-blue)"}}>{title}</Card.Title> {/* Neon title */}
+        <Card.Text style={{ textAlign: 'justify', color: "var(--text-secondary)" }}>
           {description}
         </Card.Text>
 
         {/* Tech Stacks */}
-        <div>
-          <ul style={{ listStyleType: 'none', padding: 0, marginBottom: '20px' }}>
-            {techStacks && techStacks.map((stack, index) => (
-              <li key={stack} style={{ display: 'inline', marginRight: '10px' }}>
-                {index > 0 && ' • '}
+        <div className="tech-stack-container">
+          <ul className="tech-stack-list">
+            {techStacks && techStacks.map((stack) => (
+              <li key={stack} className="tech-stack-item">
                 {stack}
               </li>
             ))}
           </ul>
         </div>
 
-        <Button variant="primary" href={ghLink} target="_blank">
-          <BsGithub />
-          {' '}
-          &nbsp;
-          {isBlog ? 'Blog' : 'GitHub'}
-        </Button>
-        {'\n'}
-        {'\n'}
-
-        {!isBlog && demoLink && (
-          <Button
-            variant="primary"
-            href={demoLink}
-            target="_blank"
-            style={{ marginLeft: '10px' }}
-          >
-            <CgWebsite />
-            {' '}
-            &nbsp;
-            Demo
+        <div className="project-buttons-container">
+          <Button variant="primary" href={ghLink} target="_blank" className="futuristic-btn">
+            <BsGithub style={{ marginRight: '5px' }} />
+            {isBlog ? 'Blog' : 'GitHub'}
           </Button>
-        )}
+
+          {!isBlog && demoLink && (
+            <Button
+              variant="primary"
+              href={demoLink}
+              target="_blank"
+              className="futuristic-btn"
+              style={{ marginLeft: '10px' }}
+            >
+              <CgWebsite style={{ marginRight: '5px' }} />
+              Demo
+            </Button>
+          )}
+        </div>
       </Card.Body>
-    </Card>
+    </motion.div>
   );
 }
 

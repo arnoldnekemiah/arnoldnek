@@ -14,22 +14,23 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <p>Designed and Developed by i-nad</p>
+          <h3>Designed and Developed by i-nad</h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <p>
+          <h3>
             Copyright ©
             {' '}
             {year}
             {' '}
             Arnold Nekemiah
-          </p>
+          </h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
             <li className="social-icons">
               <a
                 href="https://github.com/arnoldnekemiah"
+                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"
@@ -40,6 +41,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://twitter.com/arnoldikonde"
+                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter profile"
@@ -50,6 +52,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/arnoldnekemiah/"
+                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
@@ -60,6 +63,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.instagram.com/arnold_nekemiah"
+                style={{ color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram profile"

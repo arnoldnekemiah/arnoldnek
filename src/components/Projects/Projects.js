@@ -19,7 +19,7 @@ function Projects() {
           {' '}
           <strong className="purple">Works </strong>
         </h1>
-        <p style={{ color: 'white' }}>
+        <p className="project-subtitle">
           Here are a few projects I&lsquo;ve worked on recently.
         </p>
         <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>

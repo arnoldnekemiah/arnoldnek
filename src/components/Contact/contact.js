@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './contact.css';
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 
 const contactConfig = {
   YOUR_EMAIL: 'arnoldnek@gmail.com',
@@ -17,74 +16,77 @@ export default function ContactUs() {
   return (
     <Container className="container-contact">
       <Row className="mb-5 mt-3">
-        <Col lg="12" className="text-center">
+        <Col lg="8">
           <h1 className="display-4 mb-4">Contact Me</h1>
-          <hr className="t_border my-4" />
+          <hr className="t_border my-4 ml-0 text-left" />
         </Col>
       </Row>
       <Row className="sec_sp">
-        <Col lg="6" className="mb-5 contact-info-col">
-          <h3 className="color_sec py-4">Get in touch</h3>
-          <div className="contact-details">
-            <address className="contact-details-with-icons">
-              <p>
-                <FaEnvelope />
-                <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>{contactConfig.YOUR_EMAIL}</a>
-              </p>
-              {contactConfig.YOUR_FONE ? (
-                <p>
-                  <FaPhoneAlt />
+        <Col lg="12" className="d-flex flex-wrap"> {/* Added flex-wrap for responsiveness */}
+          <Col lg="5" className="mb-5 contact-info-col">
+            <h3 className="color_sec py-4">Get in touch</h3>
+            <div className="contact-details">
+              <address>
+                <p> {/* Wrapped email in p for consistent styling with phone */}
+                  <strong>Email:</strong>
                   {' '}
-                  {contactConfig.YOUR_FONE}
+                  <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>{contactConfig.YOUR_EMAIL}</a>
                 </p>
-              ) : (
-                ''
-              )}
-            </address>
-          </div>
-          <p>{contactConfig.description}</p>
-        </Col>
-        <Col lg="6" className="contact-form-col">
-          <form className="contact__form w-100" action="https://formspree.io/f/xgebykvy" method="post">
-            <Row>
-              <Col lg="6" className="form-group">
-                <input
-                  className="form-control"
-                  id="name"
-                  name="name"
-                  placeholder="Name"
-                  type="text"
-                  required
-                />
-              </Col>
-              <Col lg="6" className="form-group">
-                <input
-                  className="form-control rounded-0"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                  type="email"
-                  required
-                />
-              </Col>
-            </Row>
-            <textarea
-              className="form-control rounded-0 mb-3"
-              id="message"
-              name="message"
-              placeholder="Message"
-              rows="5"
-              required
-            />
-            <Row>
-              <Col lg="12" className="form-group">
-                <button className="btn btn-primary ac_btn" type="submit">
-                  Send Message
-                  <span className="btn-icon">✉</span>
-                </button>
-              </Col>
-            </Row>
-          </form>
+                {contactConfig.YOUR_FONE ? (
+                  <p>
+                    <strong>Phone:</strong>
+                    {' '}
+                    {contactConfig.YOUR_FONE}
+                  </p>
+                ) : (
+                  ''
+                )}
+              </address>
+            </div>
+            <p>{contactConfig.description}</p>
+          </Col>
+          <Col lg="7" className="d-flex align-items-center contact-form-col glassmorphic"> {/* Added glassmorphic */}
+            <form className="contact__form w-100" action="https://formspree.io/f/xgebykvy" method="post">
+              <Row>
+                <Col lg="6" className="form-group">
+                  <input
+                    className="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    type="text"
+                    required
+                  />
+                </Col>
+                <Col lg="6" className="form-group">
+                  <input
+                    className="form-control rounded-0"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    type="email"
+                    required
+                  />
+                </Col>
+              </Row>
+              <textarea
+                className="form-control rounded-0"
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows="5"
+                required
+              />
+              <br />
+              <Row>
+                <Col lg="12" className="form-group">
+                  <button className="btn btn-primary ac_btn" type="submit">
+                    Send Message <span className="btn-icon">✉</span>
+                  </button>
+                </Col>
+              </Row>
+            </form>
+          </Col>
         </Col>
       </Row>
     </Container>

@@ -1,175 +1,156 @@
-/* Removed local :root and [data-theme="light"] variables */
-/* Removed commented out html, body styles */
-/* Removed generic ul, h1-h6, p, code, .ovhidden, .text_2, .color_pr */
-/* Removed .cursor__dot and .loading-bar styles, assuming global or not critical */
+/* Contact Page Futuristic Styles */
 
-a,
-a:hover {
-  color: var(--primary-color); /* Using global primary color for links */
+.container-contact {
+  background-color: var(--base-bg-color);
+  padding: 60px 0;
+  color: var(--text-primary);
+  font-family: 'Orbitron', sans-serif; /* Ensure futuristic font is applied */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: calc(100vh - 80px); /* Adjust 80px based on actual navbar height */
 }
 
-.color_sec { /* Used for "Get in touch" heading */
-  color: var(--primary-color);
-  font-size: 1.75rem; /* Slightly larger */
-  font-weight: 600; /* Ensure it's bold */
-  margin-bottom: 1.5rem; /* Add space below */
+.container-contact .display-4 { /* Main "Contact Me" heading */
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px var(--neon-magenta), 0 0 5px var(--neon-magenta);
+  margin-bottom: 1.5rem; /* Adjusted margin */
+  text-align: center;
 }
 
-/* Styling for the columns for better separation and spacing */
-.contact-info-col, .contact-form-col {
+.container-contact .t_border { /* Horizontal rule */
+  border-top: 1px solid var(--border-color-neon); /* Neon border */
+  box-shadow: 0 0 5px var(--border-color-neon);
+  margin-top: 1rem;
+  margin-bottom: 3rem; /* More space after HR */
+}
+
+/* "Get in touch" heading */
+.color_sec {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-blue) !important; /* Explicitly neon blue */
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 6px var(--neon-blue);
+}
+
+.contact-info-col {
   padding: 20px;
+  /* Consider making this glassmorphic too, or a solid dark surface */
+  /* background: var(--surface-bg-color); */
+  /* border-radius: 15px; */
+}
+.contact-info-col p {
+  color: var(--text-secondary);
 }
 
-/* Optional: add a subtle border to the form column on larger screens */
-@media (min-width: 992px) { /* lg breakpoint */
-  .contact-form-col {
-    border-left: 1px solid var(--border-color);
-    padding-left: 30px; /* More padding if border is added */
-  }
+.contact-form-col {
+  padding: 30px; /* More padding inside the glassmorphic form container */
+}
+
+/* Remove the media query border for contact-form-col as glassmorphic class handles borders */
+@media (min-width: 992px) {
   .contact-info-col {
     padding-right: 30px;
   }
+  .contact-form-col {
+     padding-left: 30px;
+  }
 }
 
+.contact__form {
+  width: 100%;
+}
 
 .contact__form .form-control,
 .contact__form input.form-control,
 .contact__form textarea.form-control {
-  padding: 0.75rem 1rem; /* Adjusted padding */
-  line-height: 1.5;
-  color: var(--text-color);
-  background-color: var(--bg-color); /* Could be --card-bg-color if distinct bg is needed */
-  border-radius: 0.25rem !important; /* Standardized border-radius */
-  border: 1px solid var(--border-color);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+  padding: 0.85rem 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: rgba(0,0,0,0.25); /* Dark, slightly transparent */
+  border-radius: 8px !important;
+  border: 1px solid var(--border-color-neon);
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-bottom: 1.5rem; /* Consistent margin */
 }
-
-.contact__form input.form-control {
-  margin-bottom: 1.5em; /* Adjusted margin */
-  /* height: calc(2.5em + 0.75rem + 2px); */ /* Let padding and line-height determine height */
-}
-.contact__form textarea.form-control {
-  margin-bottom: 1em; /* Added margin for textarea */
+.contact__form .form-control::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
 }
 
 .contact__form .form-control:focus {
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  border-color: var(--primary-color);
+  color: var(--text-primary);
+  background-color: rgba(0,0,0,0.3);
+  border-color: var(--neon-magenta);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25); /* Needs --primary-color-rgb or use a solid shadow */
+  box-shadow: 0 0 12px var(--neon-magenta), 0 0 2px var(--neon-magenta) inset;
 }
 
-/* Assuming --primary-color: #007bff; then rgba is (0, 123, 255, 0.25) */
-/* For simplicity, if --primary-color-rgb is not available, use a simpler shadow or just border color change */
-/* Let's use a simpler focus for now if --primary-color-rgb is not defined globally */
-/* Re-evaluating focus style: use a simpler box-shadow with --shadow-color or just rely on border-color */
-.contact__form .form-control:focus {
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  border-color: var(--primary-color);
-  outline: 0;
-  box-shadow: 0 0 5px var(--shadow-color); /* Using theme shadow color for focus */
-}
-
-
-.container-contact {
-  max-width: 960px;
-  margin: 0 auto;
-  color: var(--text-color);
-  font-family: 'Raleway', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-top: 150px; /* Increased padding to push content down */
-  padding-bottom: 2rem;
-}
-
-.container-contact .display-4 { /* Targeting h1 */
-    color: var(--text-color);
-}
-
-.container-contact .t_border { /* Styling for hr */
-    border-top: 1px solid var(--border-color);
-    margin-top: 1rem; /* Adjusted margin */
-    margin-bottom: 2rem; /* Adjusted margin */
-}
-
-.container-contact address p strong,
-.container-contact address a {
-    color: var(--text-color); /* Ensure address text is readable */
-}
-
-.contact-details-with-icons p {
-  display: flex;
+.ac_btn { /* Submit button - updated class name to .futuristic-contact-btn if preferred */
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  border: 2px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.1rem;
-}
-.container-contact address a:hover {
-    color: var(--primary-color);
-}
-.container-contact p { /* Paragraphs within contact sections */
-    color: var(--text-color);
-    margin-bottom: 1rem;
-}
-
-
-.ac_btn { /* Submit button */
-  width: fit-content;
-  background-color: var(--button-primary-bg-color);
-  color: var(--button-primary-text-color);
-  border: 1px solid var(--button-primary-bg-color); /* Ensure border matches bg */
-  padding: 0.65rem 1.2rem; /* Slightly more padding */
-  border-radius: 0.3rem; /* Slightly more rounded */
-  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  font-weight: 500;
-  display: inline-flex; /* For icon alignment */
-  align-items: center; /* For icon alignment */
-  justify-content: center; /* For icon alignment */
+  justify-content: center;
+  width: auto; /* Allow button to size to content + padding */
 }
 
 .ac_btn .btn-icon {
-  margin-left: 8px; /* Space between text and icon */
-  font-size: 1.1em; /* Adjust icon size if needed */
+  margin-left: 10px;
+  font-size: 1.1em;
+  line-height: 1; /* Ensure icon aligns well */
 }
 
-.ac_btn:hover {
-  background-color: var(--button-primary-hover-bg-color);
-  color: var(--button-primary-text-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow-color);
+.ac_btn:hover, .ac_btn:focus {
+  background: var(--neon-green);
+  color: var(--base-bg-color);
+  box-shadow: 0 0 15px var(--neon-green), 0 0 25px var(--neon-green);
+  transform: translateY(-3px) scale(1.02);
+  outline: none;
 }
-
 .ac_btn:focus {
-  background-color: var(--button-primary-hover-bg-color);
-  color: var(--button-primary-text-color);
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb),0.5); /* Requires --primary-color-rgb */
-  /* Fallback focus if --primary-color-rgb is not available */
-  /* box-shadow: 0 0 5px var(--shadow-color); */
-}
-/* Simpler focus for ac_btn for now */
-.ac_btn:focus {
-  background-color: var(--button-primary-hover-bg-color);
-  border-color: var(--button-primary-hover-bg-color);
-  color: var(--button-primary-text-color);
-  outline: 0;
-  box-shadow: 0 0 8px var(--primary-color);
+  border-color: var(--neon-green); /* Ensure focus border matches */
 }
 
-/* Styles for contact details if icons were added (using a wrapper class) */
+
+.contact-details { /* Wrapper for address, email, phone */
+  margin-top: 1rem;
+}
 .contact-details p {
-  margin-bottom: 0.75rem; /* Consistent spacing */
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  font-size: 0.95rem;
 }
-
-.contact-details svg { /* If react-icons were used */
+.contact-details svg { /* For potential react-icons */
   margin-right: 12px;
-  color: var(--primary-color);
-  font-size: 1.2em; /* Make icons a bit larger */
+  color: var(--neon-blue); /* Neon blue for icons */
+  font-size: 1.3em;
 }
-
 .contact-details strong {
-  margin-right: 5px;
+  color: var(--text-primary);
+  margin-right: 8px;
+  font-weight: 500;
+}
+.contact-details a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.contact-details a:hover {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 5px var(--neon-magenta);
 }

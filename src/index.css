@@ -1,14 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"); /* Keep Raleway as fallback or for specific elements if needed */
 
 body {
   margin: 0;
-  font-family: "Raleway", serif !important;
+  font-family: 'Orbitron', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--base-bg-color); /* From new :root vars */
+  color: var(--text-primary); /* From new :root vars */
+  letter-spacing: 0.5px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Styles from former body[data-theme="light"] are now default: */
-  background-image: none;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  text-rendering: optimizeLegibility;
+  background-image: none; /* Ensure no previous background image persists */
 }
 
-/* Removed body[data-theme="light"] selector */
+/* Ensure other global settings are not overriding these, or adjust as needed */

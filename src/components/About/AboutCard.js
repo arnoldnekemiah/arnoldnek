@@ -4,7 +4,7 @@ import { ImPointRight } from 'react-icons/im';
 
 function AboutCard() {
   return (
-    <Card className="quote-card-view">
+    <Card className="quote-card-view glassmorphic"> {/* Added .glassmorphic */}
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: 'justify' }}>

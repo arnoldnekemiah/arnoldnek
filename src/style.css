@@ -1,45 +1,67 @@
 :root {
-  --bg-color: #FFFFFF;
-  --text-color: #333333;
-  --primary-color: #007bff; /* Muted Blue */
-  --secondary-color: #6c757d; /* Muted Gray */
-  --section-background-color: #f8f9fa; /* Slightly off-white */
-  --card-bg-color: #FFFFFF;
-  --border-color: #dee2e6;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --imp-text-color: #0056b3; /* Darker blue for emphasis in light theme */
-  --navbar-bg-color: #f8f9fa;
-  --footer-bg-color: #e9ecef;
-  --scrollbar-track-color: #f1f1f1;
-  --scrollbar-thumb-color: #c0c0c0;
-  --scrollbar-thumb-hover-color: #a0a0a0;
-  --button-primary-bg-color: #007bff;
-  --button-primary-text-color: #FFFFFF;
-  --button-primary-hover-bg-color: #0056b3;
-  /* The following variables are now explicitly set for the light theme as default */
-  /* These were effectively the light theme values already, but now they are the ONLY values. */
-  --image-gradient: none; /* Or a light-themed gradient if desired */
-  /* --imp-text-color is already #0056b3 from above, which is good for light theme */
+  /* Dark Base */
+  --base-bg-color: #05050F; /* Near black with a hint of blue */
+  --surface-bg-color: #101020; /* Slightly lighter surface for elements */
+
+  /* Neon Accents */
+  --neon-blue: #00FFFF; /* Electric Blue / Cyan */
+  --neon-magenta: #FF00FF; /* Magenta */
+  --neon-green: #39FF14; /* Cyber Green */
+  --neon-purple: #BC00FF; /* A deep purple as another option */
+
+  /* Text Colors */
+  --text-primary: #E0E0E0; /* Light gray for primary text */
+  --text-secondary: #A0A0A0; /* Dimmer gray for secondary text */
+  --text-highlight-blue: var(--neon-blue);
+  --text-highlight-magenta: var(--neon-magenta);
+  --text-highlight-green: var(--neon-green);
+
+  /* Glassmorphism Base (can be overridden per component) */
+  --glass-bg: rgba(25, 30, 50, 0.6); /* Semi-transparent dark blueish */
+  --glass-blur: 10px;
+  --glass-border-color: rgba(0, 255, 255, 0.3); /* Subtle neon blue border */
+  --glass-border-width: 1px;
+
+  /* Borders & Dividers */
+  --border-color-subtle: rgba(255, 255, 255, 0.1);
+  --border-color-neon: var(--neon-blue);
+
+  /* Other UI Elements */
+  --scrollbar-thumb-color: var(--neon-blue);
+  --scrollbar-track-color: #1A1A33;
+  --scrollbar-thumb-hover-color: var(--neon-magenta);
+
+  /* Mapped variables from previous general usage to new dark futuristic theme */
+  --bg-color: var(--base-bg-color); /* General background */
+  --text-color: var(--text-primary); /* General text color */
+  --primary-color: var(--neon-blue); /* Primary interactive color */
+  --secondary-color: var(--neon-magenta); /* Secondary interactive color */
+  --imp-text-color: var(--neon-blue); /* For .purple class or similar emphasis */
+  --card-bg-color: var(--surface-bg-color); /* Default card background */
+  --border-color: var(--border-color-subtle); /* Default border for elements */
+  --shadow-color: rgba(0, 255, 255, 0.15); /* Subtle neon shadow */
+
+  --button-primary-bg-color: var(--neon-blue);
+  --button-primary-text-color: var(--base-bg-color); /* Dark text on bright neon button */
+  --button-primary-hover-bg-color: var(--neon-magenta);
+
+  --navbar-bg-color: rgba(10, 10, 20, 0.7); /* Semi-transparent for navbar glass effect */
+  --footer-bg-color: rgba(10, 10, 20, 0.8);
+
+  --image-gradient: none;
+  --section-background-color: var(--base-bg-color); /* Default section bg */
 }
 
-/* The html {} block containing dark theme variables has been removed. */
-
-.purple { /* Removed :root[data-theme="light"] */
-  color: var(--primary-color) !important;
+.purple {
+  color: var(--imp-text-color) !important;
 }
 
 button:focus {
   box-shadow: none !important;
 }
 
-h1 {
-  letter-spacing: normal !important;
-}
-
 /* --------- */
-
 /*  Preloader */
-
 /* --------- */
 #preloader {
   position: fixed;
@@ -48,8 +70,8 @@ h1 {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background-color: var(--bg-color); /* Updated for themes */
-  background-image: url(./Assets/pre.svg);
+  background-color: var(--base-bg-color); /* Use new base background */
+  background-image: url(./Assets/pre.svg); /* Assuming pre.svg is theme-agnostic or will be updated */
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -64,799 +86,710 @@ h1 {
 }
 
 /* --------- */
-
 /* Scrollbar   */
-
 /* --------- */
-
 ::-webkit-scrollbar {
   width: 7px;
 }
 
-/* Scrollbar styles now default to light theme */
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track-color);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb-color);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover-color);
+  border-radius: 10px;
+}
+
+/*
+  All component-specific styles (Navbar, Home, Projects, About, Resume etc.)
+  have been removed by this overwrite. They will be re-added and restyled
+  in subsequent steps according to the futuristic dark mode theme.
+*/
+
+/* --------- */
+/* Project Section - Futuristic Dark Mode */
+/* --------- */
+
+.project-section {
+  position: relative;
+  padding: 80px 0; /* Adjusted padding */
+  background-color: var(--base-bg-color); /* Ensure base background */
+}
+
+.project-heading {
+  color: var(--text-primary);
+  font-size: 2.8em !important;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px var(--neon-magenta); /* Magenta glow for project heading */
+}
+
+.project-heading .purple { /* For "Works" */
+  color: var(--neon-magenta) !important; /* Match heading glow */
+  text-shadow: 0 0 8px var(--neon-magenta);
+}
+
+.project-subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 50px;
+}
+
+.project-card { /* This is the Col md={4} - for spacing */
+  margin-bottom: 40px !important; /* Spacing between rows of cards */
+}
+
+.project-card-view.glassmorphic { /* motion.div gets these classes */
+  padding: 0; /* Remove padding from glassmorphic if Card.Body handles it */
+  border-radius: 15px; /* Consistent with .glassmorphic */
+  overflow: hidden; /* Important for child elements like Card.Img */
+  border-left: 3px solid var(--neon-green); /* Neon green accent border */
+  border-top: 1px solid var(--glass-border-color); /* Keep other borders subtle */
+  border-right: 1px solid var(--glass-border-color);
+  border-bottom: 1px solid var(--glass-border-color);
+  color: var(--text-primary); /* Default text color inside card */
+}
+
+.project-card-view .card-img-top {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensure image covers the area */
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card-view:hover .card-img-top {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.project-card-view .card-body {
+  padding: 25px;
+  color: var(--text-primary); /* Ensure body text uses primary */
+}
+
+.project-card-view .card-title { /* Already styled inline in JS for neon-blue */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.project-card-view .card-text { /* Already styled inline in JS for text-secondary */
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tech-stack-container {
+  margin-bottom: 20px;
+}
+
+.tech-stack-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Spacing between tech stack items */
+}
+
+.tech-stack-item {
+  background-color: rgba(var(--neon-green-rgb, 57, 255, 20), 0.1); /* Assuming neon-green is #39FF14 */
+  color: var(--neon-green);
+  padding: 5px 10px;
+  border-radius: 15px; /* Pill shape */
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(var(--neon-green-rgb, 57, 255, 20), 0.3);
+}
+
+.project-buttons-container {
+  margin-top: auto; /* Pushes buttons to the bottom if card body is flex column */
+  text-align: left; /* Align buttons to the left */
+}
+
+.futuristic-btn {
+  background: transparent !important;
+  border: 1px solid var(--neon-blue) !important;
+  color: var(--neon-blue) !important;
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 8px !important;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.futuristic-btn:hover {
+  background-color: var(--neon-blue) !important;
+  color: var(--base-bg-color) !important;
+  box-shadow: 0 0 12px var(--neon-blue);
+  transform: translateY(-2px);
+}
+.futuristic-btn svg { /* Ensure icon color changes correctly */
+    transition: fill 0.3s ease;
+}
+.futuristic-btn:hover svg {
+    fill: var(--base-bg-color) !important;
+}
+
+
+.glassmorphic {
+  background: var(--glass-bg, rgba(25, 30, 50, 0.6)); /* Fallback if variable isn't defined */
+  -webkit-backdrop-filter: blur(var(--glass-blur, 10px)); /* For Safari */
+  backdrop-filter: blur(var(--glass-blur, 10px));
+  border-radius: 15px; /* Using 15px for a softer look */
+  border: var(--glass-border-width, 1px) solid var(--glass-border-color, rgba(0, 255, 255, 0.3));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow for depth */
+  /* Common padding can be added here if desired, or applied per component.
+     For example: padding: 20px; */
 }
 
 /* --------- */
-
-/* Navbar Section  */
-
+/* Navbar Section - Futuristic Dark Mode */
 /* --------- */
-/* Dark theme .sticky styles (using specific -dark variables) removed. */
-.sticky {
-  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out !important;
-  background-color: var(--navbar-bg-color) !important;
-  box-shadow: 0 10px 10px 0 var(--shadow-color) !important;
-  backdrop-filter: blur(15px) !important;
-}
-
-/* Removed :root[data-theme="light"] .sticky */
 
 .navbar {
   position: fixed !important;
-  transition: background-color 0.3s ease-out !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
-  background-color: var(--navbar-bg-color) !important; /* Default for non-sticky */
+  width: 100%;
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out, border-bottom-color 0.3s ease-out !important;
+  padding: 0.5rem 2rem !important;
+  font-size: 1rem !important;
+  background-color: transparent !important; /* Initial state, glassmorphism applied by .sticky or directly */
+  border-bottom: var(--glass-border-width, 1px) solid transparent; /* Initial border transparent */
+  z-index: 1030; /* Bootstrap's default z-index for fixed navbar */
 }
 
-/* Removed :root[data-theme="light"] .navbar:not(.sticky) */
+.navbar.sticky {
+  /* .sticky class will have .glassmorphic applied in JS for background and blur */
+  /* --navbar-bg-color is used by .glassmorphic if it's added to the navbar */
+  border-bottom-color: var(--glass-border-color, rgba(0, 255, 255, 0.3)); /* Show border when sticky */
+}
 
+/* Ensure glassmorphic class styles apply correctly and override Bootstrap if needed */
+.navbar.glassmorphic {
+  background: var(--navbar-bg-color) !important; /* Custom navbar glass background */
+  -webkit-backdrop-filter: blur(var(--glass-blur, 10px)) !important;
+  backdrop-filter: blur(var(--glass-blur, 10px)) !important;
+  border-radius: 0 !important; /* Full width navbar typically has no border-radius */
+  border: none !important; /* Glassmorphic class adds its own border, remove Bootstrap's default if any */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important; /* From glassmorphic, ensure it applies */
+}
+.navbar.sticky.glassmorphic { /* When sticky, ensure border from glassmorphic is used or overridden */
+   border-bottom: var(--glass-border-width, 1px) solid var(--glass-border-color, rgba(0, 255, 255, 0.3)) !important;
+}
+
+
+.navbar-brand {
+  color: var(--text-highlight-blue) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 3px var(--primary-color);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-size: 1.5rem; /* Make brand slightly larger */
+}
+.navbar-brand:hover {
+  color: var(--neon-magenta) !important;
+  text-shadow: 0 0 5px var(--neon-magenta);
+}
+
+.logo { /* Assuming img logo is used */
+  height: 2.2em !important; /* Adjusted size */
+  width: auto !important;
+  filter: drop-shadow(0 0 4px var(--neon-blue)); /* Subtle glow */
+  transition: filter 0.3s ease;
+}
+.navbar-brand:hover .logo {
+  filter: drop-shadow(0 0 7px var(--neon-magenta));
+}
 
 .navbar-toggler {
-  position: relative !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
+  border: 1px solid var(--neon-blue) !important;
+  border-radius: 5px;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 5px var(--neon-blue);
 }
 
 .navbar-toggler span {
-  display: block !important;
-  /* background-color from var(--navbar-toggler-icon-color-dark) removed. Light theme version will be default. */
-  transition: background-color 0.35s ease-in-out;
-  height: 4px !important;
-  width: 27px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  transform: rotate(0deg) !important;
-  left: 0 !important;
-  opacity: 1 !important;
-}
-
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: 0 !important;
-}
-
-.navbar-toggler span:nth-child(1),
-.navbar-toggler span:nth-child(3) {
-  transition: transform 0.35s ease-in-out, background-color 0.35s ease-in-out !important; /* Added background-color */
+  background-color: var(--neon-blue) !important;
+  height: 2px !important;
+  width: 22px !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+  border-radius: 1px;
+  transition: transform 0.35s ease-in-out, background-color 0.35s ease-in-out !important;
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(135deg) !important;
-  opacity: 0.9 !important;
+  transform: rotate(45deg) translate(5px, 5px) !important;
 }
-
 .navbar-toggler:not(.collapsed) span:nth-child(2) {
-  height: 12px !important;
-  visibility: hidden !important;
-  background-color: transparent !important;
+  opacity: 0 !important;
 }
-
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(-135deg) !important;
-  opacity: 0.9 !important;
-}
-
-@media (max-width: 767px) {
-  .navbar { /* Mobile styles */
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    /* background-color from var(--navbar-mobile-bg-color-dark) removed. Light theme version will be default. */
-    background-color: var(--navbar-bg-color) !important; /* Mobile navbar background */
-  }
-
-  .navbar-nav .nav-item a::after {
-    display: none !important;
-  }
-}
-
-.navbar-brand {
-  color: var(--text-color) !important;
-}
-/* Removed :root[data-theme="light"] .navbar-brand */
-
-.logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
-}
-
-.nav-link {
-  padding: 0.8rem 1rem !important;
+  transform: rotate(-45deg) translate(4px, -4px) !important; /* Adjusted for 2px height */
 }
 
 .navbar-nav .nav-link {
-  /* color var(--nav-link-color-dark) removed. Light theme version will be default. */
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-  color: var(--text-color) !important;
-}
-/* Removed :root[data-theme="light"] .navbar-nav .nav-link */
-
-.navbar-toggler span {
-  /* background-color from var(--navbar-toggler-icon-color-dark) removed. */
-  background-color: var(--primary-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .navbar-toggler span */
-
-@media (max-width: 767px) {
-  .nav-link {
-    padding: 0.7rem 1rem !important;
-  }
-}
-
-.navbar-nav .nav-item {
+  color: var(--text-primary) !important;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem !important;
+  margin-left: 15px; /* Spacing between items */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
   position: relative;
-  margin-left: 20px;
+  text-transform: uppercase; /* Futuristic feel */
+  letter-spacing: 0.8px;
 }
 
-.navbar-nav .nav-item a {
-  font-weight: 400;
-  transition: color 0.3s ease-out;
-  position: relative;
-  z-index: 1;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { /* Assuming .active class is used by React Router NavLink */
+  color: var(--neon-blue) !important;
+  text-shadow: 0 0 8px var(--neon-blue);
 }
 
-.navbar-nav .nav-item a::after {
+.navbar-nav .nav-item a::after { /* Underline effect */
   content: "";
-  position: relative;
+  position: absolute;
   display: block;
-  height: 5px;
+  height: 2px;
   width: 0;
-  letter-spacing: normal;
-  /* background var(--nav-link-hover-after-bg-dark) removed. Light theme version will be default. */
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: width 0.3s ease-out, background-color 0.3s ease-out;
-  background: var(--primary-color); /* Default after style */
+  border-radius: 1px;
+  background: var(--neon-blue);
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 5px var(--neon-blue);
+  transition: width 0.3s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
-.navbar-nav .nav-item a:hover::after {
-  width: 100%;
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 70%; /* Underline width on hover/active */
 }
 
-/* Removed :root[data-theme="light"] .navbar-nav .nav-item a::after */
+@media (max-width: 991px) { /* Bootstrap's 'lg' breakpoint is 992px. Use max-width: 991.98px for <lg */
+  .navbar {
+    padding: 0.5rem 1rem !important;
+  }
+  .navbar-collapse.show, .navbar-collapse.collapsing {
+    background: var(--surface-bg-color) !important; /* Dark surface for collapsed menu */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color-subtle);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 0.8rem 0 !important;
+    text-align: center;
+  }
+   .navbar-nav .nav-item a::after {
+    bottom: 0px; /* Adjust underline for mobile if needed */
+  }
+}
 
 /* --------- */
-
-/* Home section */
-
+/* Home Section - Futuristic Dark Mode */
 /* --------- */
-.wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.1s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  10% {
-    transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
-  20% {
-    transform: rotate(-8deg);
-  }
-
-  30% {
-    transform: rotate(14deg);
-  }
-
-  40% {
-    transform: rotate(-4deg);
-  }
-
-  50% {
-    transform: rotate(10deg);
-  }
-
-  60% {
-    transform: rotate(0deg);
-  } /* Reset for the last half to pause */
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-#tsparticles {
-  position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  width: 100%;
-  height: 100%;
-}
-
-.home-header {
-  padding-top: 80px !important;
-}
 
 .home-section {
   position: relative;
-  z-index: -1;
-  /* background-image var(--image-gradient) removed. Light theme version will be default. */
-  background-position: top center;
-  background-repeat: no-repeat;
+  z-index: 1; /* Ensure it's above particles if particles are z-index 0 or -1 */
+  min-height: 100vh;
   padding-bottom: 30px !important;
-  padding-top: 30px !important;
-  background-image: none; /* Was var(--image-gradient) for dark, now none for light */
-  background-color: var(--bg-color); /* Light theme default */
+  padding-top: 0px !important; /* Remove default padding top if navbar is transparent */
+  display: flex; /* For centering home-content */
+  align-items: center; /* For centering home-content */
+  justify-content: center; /* For centering home-content */
+  background-color: var(--base-bg-color); /* Base dark background */
+  /* Optional: Subtle grid or circuit pattern */
+  /* background-image:
+    linear-gradient(rgba(var(--neon-blue-rgb, 0, 255, 255), 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--neon-blue-rgb, 0, 255, 255), 0.05) 1px, transparent 1px);
+  background-size: 20px 20px; */
 }
-
-/* Removed :root[data-theme="light"] .home-section */
 
 .home-content {
-  padding: 9rem 0 2rem !important;
-  /* color var(--home-content-text-color-dark) removed. Light theme version will be default. */
-  text-align: left;
-  color: var(--text-color); /* Light theme default */
+  padding: 2rem 0 !important; /* Adjusted padding */
+  color: var(--text-primary);
+  text-align: center; /* Center align text in hero */
+  max-width: 800px; /* Constrain width for better readability */
 }
 
-/* Removed :root[data-theme="light"] .home-content */
+.home-header {
+  padding-top: 0 !important; /* Remove if navbar is transparent */
+  text-align: center;
+}
 
+.heading,
+.heading-name,
+.main-name {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text-highlight-blue);
+  /* Holographic Text Effect */
+  text-shadow:
+    0 0 5px var(--neon-blue),
+    0 0 10px var(--neon-blue),
+    0 0 18px var(--neon-blue),
+    0 0 25px var(--neon-magenta), /* Adding a hint of magenta for more depth */
+    0 2px 3px rgba(0,0,0,0.5); /* Standard shadow for depth */
+  letter-spacing: 1.5px;
+}
 
 .heading {
-  font-size: 2.4em !important;
-  padding-left: 50px !important;
-  /* color will be inherited from .home-content or overridden by specific classes */
+  font-size: 3.5em !important; /* Larger main heading */
+  margin-bottom: 0.5em !important;
 }
 
 .heading-name {
-  font-size: 2.5em !important;
-  padding-left: 45px !important;
-  /* color will be inherited from .home-content or overridden by specific classes */
+  font-size: 4em !important; /* Even larger for name */
+  margin-bottom: 0.5em !important;
 }
 
 .main-name {
-  color: var(--primary-color); /* Light theme default */
+  color: var(--neon-magenta); /* Differentiate main name */
+  text-shadow:
+    0 0 5px var(--neon-magenta),
+    0 0 10px var(--neon-magenta),
+    0 0 18px var(--neon-magenta),
+    0 0 25px var(--neon-blue),
+    0 2px 3px rgba(0,0,0,0.5);
 }
-/* Removed :root[data-theme="light"] .main-name */
 
-.Typewriter__wrapper {
-  font-size: 2.2em !important;
-  /* color var(--typewriter-text-color-dark) removed. Light theme version will be default. */
-  font-weight: 600 !important;
-  color: var(--primary-color) !important; /* Light theme default */
+.wave {
+  display: inline-block;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  font-size: 0.8em; /* Adjust size if needed */
+  text-shadow: none; /* Remove holographic from emoji if it looks weird */
 }
-/* Removed :root[data-theme="light"] .Typewriter__wrapper */
+
+.Typewriter__wrapper,
+.Typewriter__cursor {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8em !important; /* Adjust size */
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 5px var(--neon-green), 0 0 8px var(--neon-green);
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+}
 
 .Typewriter__cursor {
-  font-size: 2.4em !important;
-  /* color var(--typewriter-cursor-color-dark) removed. Light theme version will be default. */
-  color: var(--primary-color) !important; /* Light theme default */
-}
-/* Removed :root[data-theme="light"] .Typewriter__cursor */
-
-@media (max-width: 767px) {
-  .Typewriter__wrapper {
-    font-size: 1.4em !important;
-    font-weight: 500 !important;
-    position: absolute !important;
-  }
-
-  .Typewriter__cursor {
-    display: none !important;
-  }
+  border-right: 3px solid var(--neon-green); /* Thinner, glowing cursor */
+  box-shadow: 0 0 5px var(--neon-green);
 }
 
-.myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
+/* Home Main Image / Data Panel Placeholder */
+.home-section .img-fluid {
+  max-height: 350px !important; /* Adjust size */
+  border-radius: 10px;
+  border: var(--glass-border-width, 1px) solid var(--glass-border-color, rgba(0, 255, 255, 0.3));
+  box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue) inset, 0 4px 30px rgba(0, 0, 0, 0.2); /* Added main glass shadow too */
+  padding: 10px;
+  background: var(--glass-bg); /* Using glass-bg for consistency */
+  -webkit-backdrop-filter: blur(var(--glass-blur, 5px)); /* Less blur for an image panel maybe */
+  backdrop-filter: blur(var(--glass-blur, 5px));
 }
 
-@media (max-width: 767px) {
-  .myAvtar {
-    padding-top: 2em !important;
-    padding-bottom: 2em !important;
-  }
-}
-
+/* Home2 Section - "Introduce Myself" */
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  background-color: var(--surface-bg-color); /* Slightly lighter than base for depth */
 }
 
-.home-about-description {
-  /* color var(--home-about-description-color-dark) removed. Light theme version will be default. */
-  padding-top: 100px !important;
-  padding-bottom: 20px !important;
+.home-about-description h1 {
+  font-size: 2.8em !important;
+  color: var(--text-primary);
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
   text-align: center;
-  color: var(--text-color) !important; /* Light theme default */
+  margin-bottom: 30px;
 }
-/* Removed :root[data-theme="light"] .home-about-description */
+.home-about-description h1 .purple { /* This targets the .purple span inside the H1 */
+    color: var(--neon-blue) !important; /* Overrides general .purple if needed for specific context */
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
 
 .home-about-body {
-  padding-top: 50px;
-  font-size: 1.2em !important;
-  text-align: left;
-  /* Text color will be inherited from .home-about-description */
+  color: var(--text-secondary);
+  font-size: 1.1em !important;
+  line-height: 1.8;
+  text-align: justify;
+}
+.home-about-body .purple { /* For highlighted skills */
+    color: var(--neon-green) !important;
+    font-weight: bold;
 }
 
+/* AI Avatar Placeholder in Home2 */
+.myAvtar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myAvtar .img-fluid {
+  width: 250px; /* Adjust size */
+  height: 250px;
+  border-radius: 50%; /* Circular avatar */
+  border: 3px solid var(--neon-magenta);
+  box-shadow: 0 0 20px var(--neon-magenta), 0 0 30px var(--neon-magenta) inset;
+  padding: 5px;
+  background-color: var(--base-bg-color);
+}
+
+/* Social Media Icons in Home2 */
 .home-about-social {
   text-align: center !important;
-  padding-top: 25px;
-  color: var(--text-color) !important; /* Light theme default */
+  padding-top: 50px;
 }
-/* Removed :root[data-theme="light"] .home-about-social */
+.home-about-social h1 {
+  font-size: 2.2em;
+  color: var(--text-primary);
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+}
+.home-about-social p {
+  color: var(--text-secondary);
+  font-size: 1em;
+}
+.home-about-social p .purple {
+    color: var(--neon-blue) !important;
+    font-weight: bold;
+}
 
 .home-about-social-links {
   justify-content: center !important;
   padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
+  list-style: none;
   padding-inline-start: 0 !important;
 }
 
 .home-social-icons {
   position: relative !important;
   display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 50px !important; /* Larger icons */
+  height: 50px !important;
   text-align: center !important;
-  font-size: 1.2em !important;
-  line-height: 2em !important;
-  /* background var(--home-social-icon-bg-dark) removed. Light theme version will be default. */
+  font-size: 1.5em !important; /* Larger icon content */
+  line-height: 2em !important; /* Adjust for new size */
+  background: var(--glass-bg) !important; /* Glassmorphic circle */
+  -webkit-backdrop-filter: blur(var(--glass-blur, 5px)); /* Slightly less blur for small items */
+  backdrop-filter: blur(var(--glass-blur, 5px));
   border-radius: 50% !important;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease !important;
-  background: var(--secondary-color) !important; /* Light theme default */
+  border: 1px solid var(--glass-border-color) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out !important;
+  color: var(--neon-blue) !important; /* Icon color */
 }
-/* Removed :root[data-theme="light"] .home-social-icons */
 
+.home-social-icons:hover {
+  color: var(--base-bg-color) !important; /* Icon color on hover */
+  background: var(--neon-blue) !important; /* Fill with neon color */
+  box-shadow: 0 0 15px var(--neon-blue), 0 0 20px var(--neon-blue);
+  transform: scale(1.1);
+}
+/* Remove ::before for social icons if going for a simpler glass look */
 .home-social-icons::before {
-  content: "";
-  position: absolute;
+  display: none;
+}
+
+/* Ensure .icon-colour is not overriding new social icon styles */
+.icon-colour { /* This class was used before, ensure it doesn't conflict or remove its usage */
+  /* Styles here might be redundant if .home-social-icons is styled directly */
+}
+
+/* Adjustments for particle effects container if needed */
+#tsparticles {
+  position: absolute !important; /* Ensure it's behind content */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  /* background var(--home-social-icon-before-bg-dark) removed. Light theme version will be default. */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  transform: scale(0.9);
-  z-index: -1;
-  background: var(--primary-color); /* Light theme default */
-}
-/* Removed :root[data-theme="light"] .home-social-icons::before */
-
-.home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px var(--primary-color); /* Light theme default */
-}
-/* Removed :root[data-theme="light"] .home-social-icons:hover::before */
-
-.home-social-icons:hover {
-  color: var(--primary-color); /* Light theme default */
-  box-shadow: 0 0 5px var(--primary-color);
-  text-shadow: 0 0 2px var(--primary-color);
-}
-/* Removed :root[data-theme="light"] .home-social-icons:hover */
-
-.social-icons {
-  display: inline-block !important;
-  padding-right: 15px;
-  padding-left: 15px;
+  z-index: 0; /* Behind .home-section content which is z-index 1 */
 }
 
-.icon-colour {
-  color: var(--primary-color) !important; /* Light theme default */
+/* General section styling if needed */
+section {
+  background-color: var(--base-bg-color); /* Ensure all sections have the base dark bg */
+  color: var(--text-primary);
 }
-/* Removed :root[data-theme="light"] .icon-colour */
+
+/* Ensure .purple class uses the new --imp-text-color for specific highlights */
+.purple {
+  color: var(--imp-text-color) !important; /* This should be var(--neon-blue) or similar */
+}
 
 /* --------- */
-
-/* Footer */
-
-/* --------- */
-.footer {
-  background-color: var(--footer-bg-color);
-  padding: 20px 0;
-  text-align: center;
-  color: var(--text-color);
-}
-
-.footer-copywright p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.footer-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 767px) {
-  .footer-copywright {
-    text-align: center !important;
-  }
-
-  .footer-body {
-    text-align: center !important;
-  }
-}
-
-.footer h3 {
-  font-size: 1em;
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
-  color: var(--text-color) !important; /* Light theme default */
-}
-
-.footer-icons {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 15px;
-}
-
-.footer-icons .social-icons a {
-  color: var(--text-color);
-  transition: color 0.3s ease;
-  font-size: 1.5rem;
-}
-
-.footer-icons .social-icons a:hover {
-  color: var(--primary-color);
-}
-
-.blockquote-footer {
-  color: var(--secondary-color) !important; /* Light theme default */
-}
-/* Removed :root[data-theme="light"] .blockquote-footer */
-
-
-/* --------- */
-
-/* Projects */
-
-/* --------- */
-.project-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: none; /* Defaulting to light theme behavior */
-  background-color: var(--section-background-color);
-}
-/* Removed :root[data-theme="light"] .project-section */
-
-.project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
-}
-
-.project-card-view {
-  box-shadow: 0 4px 5px 3px var(--project-card-shadow-dark) !important; /* dark theme */
-  color: var(--project-card-text-color-dark) !important; /* dark theme */
-  /* box-shadow, color from dark theme removed. Light theme versions will be default. */
-  /* background-color: var(--card-bg-color) is already light theme oriented */
-  opacity: 0.9 !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
-  height: 100% !important;
-  border: 1px solid var(--border-color); /* Default light theme */
-  box-shadow: 0 4px 5px 3px var(--shadow-color) !important; /* Default light theme */
-  color: var(--text-color) !important; /* Default light theme */
-  background-color: var(--card-bg-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .project-card-view */
-
-.project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 6px 8px 5px var(--shadow-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .project-card-view:hover */
-
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
-}
-
-.btn-primary {
-  color: var(--button-primary-text-color) !important;
-  /* background-color, border-color from dark theme removed. Light theme versions will be default. */
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  background-color: var(--button-primary-bg-color) !important; /* Default light theme */
-  border-color: var(--button-primary-bg-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .btn-primary */
-
-.btn-primary:hover {
-  color: var(--button-primary-text-color) !important;
-  background-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
-  border-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .btn-primary:hover */
-
-.btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.project-heading {
-  /* color var(--project-heading-color-dark) removed. Light theme version will be default. */
-  font-size: 2.3em !important;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
-  color: var(--text-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .project-heading */
-
-
-/* --------- */
-
-/* About */
-
+/* About Section - Futuristic Dark Mode */
 /* --------- */
 
 .about-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  /* background-image, color from dark theme removed. Light theme versions will be default. */
-  background-image: none; /* Default light theme */
-  background-color: var(--section-background-color); /* Default light theme */
-  color: var(--text-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .about-section */
-
-.tech-icons {
-  font-size: 4.5em !important;
-  margin: 15px !important;
-  padding: 10px !important;
-  opacity: 0.93 !important;
-  /* border, box-shadow from dark theme removed. Light theme versions will be default. */
-  vertical-align: middle !important;
-  text-align: center !important;
-  border-radius: 5px !important;
-  display: table !important;
-  overflow: hidden !important;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-  color: var(--text-color) !important; /* Default light theme */
-  border: 1.7px solid var(--border-color) !important; /* Default light theme */
-  box-shadow: 4px 5px 4px 3px var(--shadow-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .tech-icons */
-
-@media (max-width: 767px) {
-  .tech-icons {
-    margin: 10px !important;
-  }
+  position: relative;
+  padding: 80px 0; /* Adjusted padding */
+  background-color: var(--base-bg-color);
 }
 
-.tech-icons:hover {
-  transform: scale(1.05) !important;
-  overflow: hidden !important;
-  border: 2.2px solid var(--primary-color) !important; /* Default light theme */
+/* Main heading in About.js, e.g., "Know Who I'M" */
+.about-section > .container > .row > .col > h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text-highlight-green);
+  font-size: 2.8em !important;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px var(--neon-green);
 }
-/* Removed :root[data-theme="light"] .tech-icons:hover */
+.about-section > .container > .row > .col > h1 .purple {
+  color: var(--neon-green) !important; /* Match heading glow */
+}
 
-.tech-icon-images {
-  padding: 20px !important;
-  line-height: 1.6 !important;
+
+/* Styling for "Professional Skillset" and "Tools I Use" headings */
+/* These reuse .project-heading, so we can enhance it or create a new one */
+.about-section .project-heading { /* Scoping to about-section if different from projects */
+  color: var(--text-primary);
+  font-size: 2.5em !important; /* Slightly smaller than main project heading */
+  text-shadow: 0 0 7px var(--neon-blue);
+  margin-top: 60px; /* Space above these subheadings */
+  margin-bottom: 40px;
+}
+.about-section .project-heading .purple {
+  color: var(--neon-blue) !important;
+  text-shadow: 0 0 7px var(--neon-blue);
 }
 
-.quote-card-view {
-  border: none !important;
-  /* color var(--quote-card-text-color-dark) removed. Light theme version will be default. */
-  background-color: transparent !important;
-  color: var(--text-color) !important; /* Default light theme */
+/* AboutCard.js styling */
+.quote-card-view.glassmorphic {
+  padding: 25px; /* Add padding to the glassmorphic card itself */
+  border-radius: 15px; /* Ensure consistency */
+  border-left: 3px solid var(--neon-purple); /* Accent border */
 }
-/* Removed :root[data-theme="light"] .quote-card-view */
+
+.quote-card-view blockquote {
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--neon-green);
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.quote-card-view blockquote .purple { /* For highlighted names/places */
+  color: var(--neon-blue) !important; /* Or --neon-magenta for variety */
+  font-weight: 600;
+}
+
+.quote-card-view .blockquote-footer {
+  color: var(--neon-green);
+  text-align: right;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+}
 
 .about-activity {
-  list-style: none !important;
-  text-align: left !important;
-  padding-left: 1px !important;
-}
-
-@media (max-width: 767px) {
-  .about-img {
-    padding-top: 0 !important;
-  }
-}
-
-/* --------- */
-
-/* Resume */
-
-/* --------- */
-
-.resume-section {
-  position: relative !important;
-  padding-top: 110px !important;
-  padding-bottom: 30px !important;
-  /* background-image, color from dark theme removed. Light theme versions will be default. */
-  background-image: none; /* Default light theme */
-  background-color: var(--section-background-color); /* Default light theme */
-  color: var(--text-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .resume-section */
-
-.resume {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  justify-content: center;
-}
-
-.resume-left {
-  padding-right: 80px !important;
-}
-
-.resume-right {
-  padding-left: 80px !important;
-}
-
-@media (max-width: 767px) {
-  .resume-left {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-
-  .resume-right {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-}
-
-.resume .resume-title {
-  font-size: 2em;
-  font-weight: 700;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.resume .resume-item {
-  padding: 0 0 10px 25px;
-  margin-top: -2px;
-  /* border-left var(--resume-item-border-color-dark) removed. Light theme version will be default. */
-  position: relative;
-  border-left: 2px solid var(--primary-color); /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .resume .resume-item */
-
-.resume .resume-item .resume-title {
-  line-height: 18px;
-  font-size: 0.9em;
-  /* background, color from dark theme removed. Light theme versions will be default. */
-  padding: 8px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-  background: var(--secondary-color); /* Default light theme */
-  color: var(--text-color); /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .resume .resume-item .resume-title */
-
-.resume .resume-item ul {
-  padding-left: 20px;
-  text-align: justify;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
   list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.resume .resume-item:last-child {
-  padding-bottom: 0;
+.about-activity li {
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
 }
 
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: var(--bg-color); /* Default light theme */
-  border: 2px solid var(--primary-color); /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .resume .resume-item::before */
-
-.like-item {
-  padding-top: 10px !important;
-  font-size: 1.1em !important;
-  font-family: sans-serif !important;
+.about-activity svg { /* For ImPointRight */
+  color: var(--neon-green);
+  margin-right: 12px;
+  font-size: 1.2em;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
-.like-btn {
-  /* background-color, border-color, color from dark theme removed. Light theme versions will be default. */
-  padding: 0.25rem 0.98rem !important;
-  border-radius: 5px !important;
-  line-height: 1.4 !important;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease !important;
-  background-color: var(--button-primary-bg-color) !important; /* Default light theme */
-  border-color: var(--button-primary-bg-color) !important; /* Default light theme */
-  color: var(--button-primary-text-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .like-btn */
-
-.like-btn:hover {
-  transform: translateY(-2px) !important;
-  background-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
-  border-color: var(--button-primary-hover-bg-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .like-btn:hover */
-
-.animate-like {
-  animation-name: likeAnimation;
-  animation-fill-mode: forwards;
-  animation-duration: 0.85s;
+/* Laptop Image in About.js */
+.about-img .img-fluid {
+  border-radius: 10px;
+  border: 2px solid var(--neon-blue);
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 35px var(--neon-blue) inset;
+  padding: 8px;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
-@keyframes likeAnimation {
-  0% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+/* Techstack and Toolstack Icons */
+.tech-icon-col { /* This is the Col xs={4} md={2} wrapper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px !important; /* Add padding to the column itself */
 }
 
-.fork-btn {
-  font-size: 1.1em !important;
-  padding-top: 10px !important;
+.tech-icons.glassmorphic { /* This is the motion.div */
+  display: flex;
+  flex-direction: column; /* Stack icon and optional text */
+  justify-content: center;
+  align-items: center;
+  min-height: 120px; /* Ensure a consistent height */
+  width: 100%; /* Make it take full width of its column */
+  padding: 20px;
+  border-radius: 10px;
+  border-width: 1px; /* Override default from .glassmorphic if too thick for small items */
+  /* Optional: different neon border for tech vs tools */
+  /* border-color: var(--neon-blue); */
 }
 
-.fork-btn-inner {
-  line-height: 1.4em !important;
-  /* background-color, color from dark theme removed. Light theme versions will be default. */
-  padding: 0.25rem 1.1rem !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  background-color: var(--secondary-color) !important; /* Default light theme */
-  border-color: var(--secondary-color) !important; /* Default light theme */
-  color: var(--button-primary-text-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .fork-btn-inner */
-
-.fork-btn-inner:hover {
-  transform: translateY(-2px) !important;
-  background-color: var(--primary-color) !important; /* Default light theme */
-  border-color: var(--primary-color) !important; /* Default light theme */
-}
-/* Removed :root[data-theme="light"] .fork-btn-inner:hover and merged its styles */
-
-.fork-btn-inner::after {
-  display: none !important;
+.tech-icons svg {
+  font-size: 3.5em; /* Adjust icon size */
+  color: var(--neon-blue); /* Default icon color */
+  margin-bottom: 5px; /* Space if text is added below */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Removed Theme Toggle Button CSS */
+.tech-icons:hover svg {
+  color: var(--neon-magenta); /* Example hover color for icon */
+  transform: scale(1.1);
+}
+
+/* Github contributions graph styling */
+.github-activity-map {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.react-activity-calendar { /* Target the calendar component if needed */
+  /* Example: give it a subtle background or border */
+  /* background-color: var(--surface-bg-color); */
+  /* padding: 15px; */
+  /* border-radius: 10px; */
+}
+/* Specific styling for GitHub calendar might be needed if default doesn't fit */
+/* This requires inspecting the rendered calendar's classes */
+/* For now, rely on its default adaptability or simple container styling */
+
+/* Ensure section has consistent background if not overridden by specific sections like home-about-section */
+section {
+  background-color: var(--base-bg-color);
+  color: var(--text-primary);
+}

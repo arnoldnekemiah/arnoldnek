@@ -11,7 +11,7 @@ import dpnew from '../../Assets/dpnew.png';
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
+    <Container fluid className="home-about-section glassmorphic" id="about"> {/* Added .glassmorphic */}
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
@@ -89,7 +89,7 @@ function Home2() {
                   href="https://github.com/arnoldnekemiah"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="home-social-icons" /* Removed icon-colour */
                   aria-label="GitHub profile"
                 >
                   <AiFillGithub />
@@ -100,7 +100,7 @@ function Home2() {
                   href="https://twitter.com/arnoldikonde"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="home-social-icons" /* Removed icon-colour */
                   aria-label="Twitter profile"
                 >
                   <AiOutlineTwitter />
@@ -111,7 +111,7 @@ function Home2() {
                   href="https://www.linkedin.com/in/arnoldnekemiah/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="home-social-icons" /* Removed icon-colour */
                   aria-label="LinkedIn profile"
                 >
                   <FaLinkedinIn />
@@ -122,7 +122,7 @@ function Home2() {
                   href="https://www.instagram.com/arnold_nekemiah"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="home-social-icons" /* Removed icon-colour */
                   aria-label="Instagram profile"
                 >
                   <AiFillInstagram />

@@ -33,19 +33,20 @@ function NavBar() {
   // However, this might be better handled once globally, e.g. in index.js or App.js
   // For now, I'll ensure data-theme="light" is set.
   // A better approach would be to set this in a higher-order component or index.js
-  // Removing dark theme logic. The next step will make light theme default.
-  // I'll assume attribute setting is handled in the CSS cleanup.
+  // For this step, we are just removing dark theme logic. The next step will make light theme default.
+  // So, I won't add attribute setting here, assuming it will be handled in the CSS cleanup.
 
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? 'sticky' : 'navbar'}
+      className={`${navColour ? 'sticky' : 'navbar'} glassmorphic`} // Added glassmorphic class
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <h1>i-nad</h1>
+          {/* Using text logo as per plan, styled by .navbar-brand CSS */}
+          i-nad
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
