@@ -20,9 +20,9 @@ function ProjectCards({
     animate: { opacity: 1, y: 0 },
     hover: {
       scale: 1.03,
-      boxShadow: "0px 0px 20px var(--neon-green)", /* Enhanced shadow on hover */
+      boxShadow: '0px 0px 20px var(--neon-green)', /* Enhanced shadow on hover */
       y: -5,
-    }
+    },
   };
 
   return (
@@ -32,12 +32,14 @@ function ProjectCards({
       initial="initial"
       animate="animate"
       whileHover="hover"
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 20 }}
     >
       <Card.Img variant="top" src={imgPath} alt="card-img" className="card-img-top" />
       <Card.Body>
-        <Card.Title style={{color: "var(--neon-blue)"}}>{title}</Card.Title> {/* Neon title */}
-        <Card.Text style={{ textAlign: 'justify', color: "var(--text-secondary)" }}>
+        <Card.Title style={{ color: 'var(--neon-blue)' }}>{title}</Card.Title>
+        {' '}
+        {/* Neon title */}
+        <Card.Text style={{ textAlign: 'justify', color: 'var(--text-secondary)' }}>
           {description}
         </Card.Text>
 

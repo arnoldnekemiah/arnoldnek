@@ -4,10 +4,12 @@ import { ImPointRight } from 'react-icons/im';
 
 function AboutCard() {
   return (
-    <Card className="quote-card-view glassmorphic"> {/* Added .glassmorphic */}
+    <Card className="quote-card-view glassmorphic">
+      {' '}
+      {/* Added .glassmorphic */}
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: 'justify' }}>
+          <p>
             Hi Everyone, I am
             {' '}
             <span className="purple">Ikonde Nekemiah Arnold </span>
@@ -40,7 +42,7 @@ function AboutCard() {
             </li>
           </ul>
 
-          <p style={{ color: 'rgb(155 126 172)' }}>
+          <p className="quote">
             &ldquo;Strive to build things that make a difference!&rdquo;
             {' '}
           </p>

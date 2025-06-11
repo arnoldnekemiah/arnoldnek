@@ -15,19 +15,23 @@ const contactConfig = {
 export default function ContactUs() {
   return (
     <Container className="container-contact">
-      <Row className="mb-5 mt-3">
+      <Row className="mb-5 mt-5 pt-5">
         <Col lg="8">
-          <h1 className="display-4 mb-4">Contact Me</h1>
+          <h1 className="display-4 mb-5">Contact Me</h1>
           <hr className="t_border my-4 ml-0 text-left" />
         </Col>
       </Row>
       <Row className="sec_sp">
-        <Col lg="12" className="d-flex flex-wrap"> {/* Added flex-wrap for responsiveness */}
+        <Col lg="12" className="d-flex flex-wrap">
+          {' '}
+          {/* Added flex-wrap for responsiveness */}
           <Col lg="5" className="mb-5 contact-info-col">
             <h3 className="color_sec py-4">Get in touch</h3>
             <div className="contact-details">
               <address>
-                <p> {/* Wrapped email in p for consistent styling with phone */}
+                <p>
+                  {' '}
+                  {/* Wrapped email in p for consistent styling with phone */}
                   <strong>Email:</strong>
                   {' '}
                   <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>{contactConfig.YOUR_EMAIL}</a>
@@ -45,7 +49,9 @@ export default function ContactUs() {
             </div>
             <p>{contactConfig.description}</p>
           </Col>
-          <Col lg="7" className="d-flex align-items-center contact-form-col glassmorphic"> {/* Added glassmorphic */}
+          <Col lg="7" className="d-flex align-items-center contact-form-col glassmorphic">
+            {' '}
+            {/* Added glassmorphic */}
             <form className="contact__form w-100" action="https://formspree.io/f/xgebykvy" method="post">
               <Row>
                 <Col lg="6" className="form-group">
@@ -81,7 +87,9 @@ export default function ContactUs() {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn btn-primary ac_btn" type="submit">
-                    Send Message <span className="btn-icon">✉</span>
+                    Send Message
+                    {' '}
+                    <span className="btn-icon">✉</span>
                   </button>
                 </Col>
               </Row>

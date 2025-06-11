@@ -11,7 +11,9 @@ import dpnew from '../../Assets/dpnew.png';
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section glassmorphic" id="about"> {/* Added .glassmorphic */}
+    <Container fluid className="home-about-section glassmorphic" id="about">
+      {' '}
+      {/* Added .glassmorphic */}
       <Container>
         <Row>
           <Col md={8} className="home-about-description">

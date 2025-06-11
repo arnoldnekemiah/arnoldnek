@@ -679,6 +679,16 @@ section {
 }
 
 /* AboutCard.js styling */
+.quote-card-view p {
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.quote-card-view .quote {
+  color: var(--text-highlight-magenta) !important;
+  font-style: italic;
+}
+
 .quote-card-view.glassmorphic {
   padding: 25px; /* Add padding to the glassmorphic card itself */
   border-radius: 15px; /* Ensure consistency */
@@ -691,7 +701,6 @@ section {
   margin-bottom: 20px;
   border-left: 3px solid var(--neon-green);
   padding-left: 20px;
-  font-style: italic;
 }
 
 .quote-card-view blockquote .purple { /* For highlighted names/places */
@@ -792,4 +801,56 @@ section {
 section {
   background-color: var(--base-bg-color);
   color: var(--text-primary);
+}
+
+/* --------- */
+/* Footer    */
+/* --------- */
+.footer {
+  background-color: var(--footer-bg-color);
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-top: 1px solid var(--glass-border-color);
+  text-align: center;
+}
+
+.footer-copywright {
+  text-align: center !important;
+}
+
+.footer-copywright h3,
+.footer-copywright p {
+  font-size: 0.9em !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: 0.5em;
+}
+
+.footer-body {
+  text-align: center !important;
+}
+
+.footer-icons {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+
+.social-icons {
+  display: inline-block !important;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.social-icons a {
+  color: var(--text-primary) !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.8em;
+}
+
+.social-icons a:hover {
+  color: var(--neon-blue) !important;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px var(--neon-blue);
 }
