@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCards';
 import Particle from '../Particle';
-import locator from '../../Assets/Projects/locator.jpg';
+// import locator from '../../Assets/Projects/locator.jpg';
+import locator2 from '../../Assets/Projects/locator2.jpeg';
 import devSchool from '../../Assets/Projects/devSchool.png';
 import metflixNew from '../../Assets/Projects/metflixNew.png';
 import space from '../../Assets/Projects/space.png';
@@ -61,13 +62,13 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={locator}
+              imgPath={locator2}
               isBlog={false}
-              title="Locator App"
-              description="This is an app that shows your current location on the map. It also has Authentication with firebase"
-              techStacks={['Flutter']}
-              ghLink="https://github.com/arnoldnekemiah/locator_app"
-              demoLink="#"
+              title="Ridelink App"
+              description="I built the Ridelink app with flutter. It is an app that allows users to request for quotes for importing and exporting goods and provide container visualization"
+              techStacks={['Flutter', 'Dart', 'RestAPI', 'Firebase']}
+              ghLink="https://play.google.com/store/apps/details?id=com.ridelink.app&hl=en"
+              demoLink="https://play.google.com/store/apps/details?id=com.ridelink.app&hl=en"
             />
           </Col>
 
