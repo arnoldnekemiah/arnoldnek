@@ -8,7 +8,7 @@ import devSchool from '../../Assets/Projects/devSchool.png';
 import metflixNew from '../../Assets/Projects/metflixNew.png';
 import space from '../../Assets/Projects/space.png';
 import doc from '../../Assets/Projects/doc.png';
-import echo from '../../Assets/Projects/echo.jpg';
+import accountanta from '../../Assets/Projects/accountanta.png';
 
 function Projects() {
   return (
@@ -86,13 +86,13 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={echo}
+              imgPath={accountanta}
               isBlog={false}
-              title="Music Player Mobile Application"
-              description="This is a music player built purely with Kotlin, It loads music stored locally in the phone"
-              techStacks={['Kotlin', 'UI', 'Ux']}
-              ghLink="https://github.com/arnoldnekemiah/Music_App"
-              demoLink="https://drive.google.com/file/d/1N1fNvkzig8Tne7UUa2l1s02pgjWcXAmJ/view?usp=sharing"
+              title="Accountanta"
+              description="Take control of your financial life with comprehensive expense tracking, smart budgeting, and goal-based savings"
+              techStacks={['Flutter', 'Dart', 'Firebase']}
+              ghLink="#####"
+              demoLink="https://play.google.com/store/apps/details?id=com.accountanta.app&hl=en"
             />
           </Col>
         </Row>
